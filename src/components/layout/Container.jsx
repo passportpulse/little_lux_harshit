@@ -12,7 +12,7 @@ export default function Container({
 
   return (
     <div
-      className={`w-full ${sizes[size]} mx-auto px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`w-full ${sizes[size]} mx-auto px-3 lg:px-8 ${className}`}
     >
       {children}
     </div>

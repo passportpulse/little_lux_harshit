@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  /* This maps your variables to Tailwind utility classes */
+  --color-primary: #fcd8be;
+  --color-primary-dark: #ffbe8f;
+  --color-secondary: #6f286c;
+  --color-secondary-dark: #4a1a48;
+}

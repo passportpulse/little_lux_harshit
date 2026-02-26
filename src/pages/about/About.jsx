@@ -1,6 +1,6 @@
 import Section from "../../components/layout/Section";
 import Container from "../../components/layout/Container";
-import littleluxe from "../../assets/little-luxe.jpeg";
+import littleluxe from "../../assets/logo-text.jpeg";
 
 export default function About() {
   return (
