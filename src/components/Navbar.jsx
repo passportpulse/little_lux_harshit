@@ -2,16 +2,10 @@ import { useState } from "react";
 import { Menu, X, ShoppingCart, Search, Sparkles } from "lucide-react";
 import logo from "../assets/logo.jpeg";
 import Container from "../components/layout/Container";
+import {navigationLinks} from "../constants/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Products", href: "/products" },
-    { name: "Brands", href: "/brands" },
-    { name: "About Us", href: "/about" },
-  ];
 
   return (
     <nav className="sticky top-0 z-500 bg-white border-b border-primary shadow-sm">
@@ -36,16 +30,16 @@ export default function Navbar() {
 
           {/* 2. Middle Menu (Desktop) */}
           <div className="hidden lg:flex items-center gap-4">
-            {navLinks.map((link) => (
+            {navigationLinks.map((link) => (
               <a
-                key={link.name}
-                href={link.href}
+                key={link.id}
+                href={link.path}
                 className="text-secondary-dark text-lg px-5 py-2 rounded-2xl transition-all duration-300 
                  hover:bg-primary/20 hover:text-secondary 
                  hover:shadow-[0_0_15px_rgba(252,216,190,0.5)] 
                  active:scale-95"
               >
-                {link.name}
+                {link.label}
               </a>
             ))}
           </div>
@@ -109,10 +103,10 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-2 overflow-hidden">
-            {navLinks.map((link) => (
+            {navigationLinks.map((link) => (
               <a
-                key={link.name}
-                href={link.href}
+                key={link.id}
+                href={link.path}
                 className={`py-2 px-3 text-secondary transform transition-all duration-500 ${
                   open
                     ? "translate-x-0 opacity-100"
@@ -120,7 +114,7 @@ export default function Navbar() {
                 }`}
                 onClick={() => setOpen(false)}
               >
-                {link.name}
+                {link.label}
               </a>
             ))}
           </div>

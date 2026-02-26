@@ -1,23 +1,12 @@
 import Section from "../components/layout/Section";
 import Container from "../components/layout/Container";
-import {
-  Mail,
-  MapPin,
-  Phone,
-  Heart,
-  Facebook,
-  Instagram,
-  Twitter,
-  Home,
-  Bike,
-  Star,
-  Gift,
-  HelpCircle,
-  Truck,
-  RotateCcw,
-  ShieldCheck,
-} from "lucide-react";
+import { Mail, MapPin, Phone, Heart } from "lucide-react";
 import logo from "../assets/logo.jpeg";
+import {
+  navigationLinks,
+  supportLinks,
+  socialLinks,
+} from "../constants/navigation";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -56,7 +45,7 @@ export default function Footer() {
               href="https://wa.me/919831046782"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group block w-full max-w-[300px] bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95"
+              className="relative group block w-full max-w-75 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-4 shadow-sm hover:shadow-lg transition-all duration-300 active:scale-95"
             >
               <div className="flex items-center gap-4">
                 <div className="relative shrink-0">
@@ -94,25 +83,24 @@ export default function Footer() {
               Explore
             </h3>
             <ul className="space-y-4">
-              {[
-                { name: "Home", icon: Home, color: "text-pink-400" },
-                { name: "Our Cycles", icon: Bike, color: "text-orange-400" },
-                { name: "Brands", icon: Star, color: "text-yellow-400" },
-                { name: "Offers", icon: Gift, color: "text-purple-400" },
-              ].map((item) => (
-                <li key={item.name}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
-                  >
-                    <item.icon
-                      size={18}
-                      className={`${item.color} group-hover:scale-110 transition-transform`}
-                    />
-                    <span className="font-medium">{item.name}</span>
-                  </a>
-                </li>
-              ))}
+              {navigationLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <li key={item.id}>
+                    <a
+                      href={item.path}
+                      className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
+                    >
+                      <Icon
+                        size={18}
+                        className={`${item.color} group-hover:scale-110 transition-transform`}
+                      />
+                      <span className="font-medium">{item.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -122,29 +110,24 @@ export default function Footer() {
               Support
             </h3>
             <ul className="space-y-4">
-              {[
-                { name: "FAQs", icon: HelpCircle, color: "text-blue-400" },
-                { name: "Shipping", icon: Truck, color: "text-green-400" },
-                { name: "Returns", icon: RotateCcw, color: "text-rose-400" },
-                {
-                  name: "Warranty",
-                  icon: ShieldCheck,
-                  color: "text-indigo-400",
-                },
-              ].map((item) => (
-                <li key={item.name}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
-                  >
-                    <item.icon
-                      size={18}
-                      className={`${item.color} group-hover:scale-110 transition-transform`}
-                    />
-                    <span className="font-medium">{item.name}</span>
-                  </a>
-                </li>
-              ))}
+              {supportLinks.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <li key={item.id}>
+                    <a
+                      href={item.path}
+                      className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
+                    >
+                      <Icon
+                        size={18}
+                        className={`${item.color} group-hover:scale-110 transition-transform`}
+                      />
+                      <span className="font-medium">{item.label}</span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -214,15 +197,26 @@ export default function Footer() {
         {/* ================= BOTTOM ================= */}
         <div className="pt-8 border-t border-primary-dark/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex gap-4">
-            {[Facebook, Instagram, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-10 h-10 rounded-2xl bg-white border border-primary-dark/20 flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-sm"
-              >
-                <Icon size={18} />
-              </a>
-            ))}
+            {socialLinks.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <a
+                  key={item.id}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group w-10 h-10 rounded-2xl flex items-center justify-center 
+          bg-white border border-primary-dark/10 shadow-sm
+          ${item.hoverBg} hover:-translate-y-1 hover:scale-110 transition-all duration-300`}
+                >
+                  <Icon
+                    size={18}
+                    className={`${item.color} group-hover:text-${item.color} transition-colors duration-300`}
+                  />
+                </a>
+              );
+            })}
           </div>
 
           <div className="text-center md:text-right">
