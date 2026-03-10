@@ -1,12 +1,8 @@
 import Section from "../components/layout/Section";
 import Container from "../components/layout/Container";
-import { Mail, MapPin, Phone, Heart } from "lucide-react";
+import { Mail, MapPin, Phone, Heart, Search, RotateCcw, Facebook, Instagram, Twitter } from "lucide-react";
 import logo from "../assets/logo.jpeg";
-import {
-  navigationLinks,
-  supportLinks,
-  socialLinks,
-} from "../constants/navigation";
+import { navigationLinks } from "../constants/navigation";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -110,24 +106,30 @@ export default function Footer() {
               Support
             </h3>
             <ul className="space-y-4">
-              {supportLinks.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <li key={item.id}>
-                    <a
-                      href={item.path}
-                      className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
-                    >
-                      <Icon
-                        size={18}
-                        className={`${item.color} group-hover:scale-110 transition-transform`}
-                      />
-                      <span className="font-medium">{item.label}</span>
-                    </a>
-                  </li>
-                );
-              })}
+              <li>
+                <a
+                  href="/track-order"
+                  className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
+                >
+                  <Search
+                    size={18}
+                    className="text-blue-400 group-hover:scale-110 transition-transform"
+                  />
+                  <span className="font-medium">Track Order</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/returns"
+                  className="flex items-center gap-3 text-secondary/70 hover:text-secondary transition-colors group"
+                >
+                  <RotateCcw
+                    size={18}
+                    className="text-rose-400 group-hover:scale-110 transition-transform"
+                  />
+                  <span className="font-medium">Return Policy</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -197,26 +199,30 @@ export default function Footer() {
         {/* ================= BOTTOM ================= */}
         <div className="pt-8 border-t border-primary-dark/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex gap-4">
-            {socialLinks.map((item) => {
-              const Icon = item.icon;
-
-              return (
-                <a
-                  key={item.id}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group w-10 h-10 rounded-2xl flex items-center justify-center 
-          bg-white border border-primary-dark/10 shadow-sm
-          ${item.hoverBg} hover:-translate-y-1 hover:scale-110 transition-all duration-300`}
-                >
-                  <Icon
-                    size={18}
-                    className={`${item.color} group-hover:text-${item.color} transition-colors duration-300`}
-                  />
-                </a>
-              );
-            })}
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-10 h-10 rounded-2xl flex items-center justify-center bg-white border border-primary-dark/10 shadow-sm hover:bg-blue-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
+            >
+              <Facebook size={18} className="text-blue-600 group-hover:text-white transition-colors duration-300" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-10 h-10 rounded-2xl flex items-center justify-center bg-white border border-primary-dark/10 shadow-sm hover:bg-pink-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
+            >
+              <Instagram size={18} className="text-pink-500 group-hover:text-white transition-colors duration-300" />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-10 h-10 rounded-2xl flex items-center justify-center bg-white border border-primary-dark/10 shadow-sm hover:bg-sky-500 hover:-translate-y-1 hover:scale-110 transition-all duration-300"
+            >
+              <Twitter size={18} className="text-sky-500 group-hover:text-white transition-colors duration-300" />
+            </a>
           </div>
 
           <div className="text-center md:text-right">

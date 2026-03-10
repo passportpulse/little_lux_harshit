@@ -2,7 +2,7 @@ import {
   Home,
   Bike,
   Star,
-  BookOpenText ,
+  BookOpenText,
   Search,
   Truck,
   RotateCcw,
@@ -10,6 +10,8 @@ import {
   Facebook,
   Instagram,
   Twitter,
+  User,
+  Phone,
 } from "lucide-react";
 
 /* ================= NAVIGATION ================= */
@@ -17,28 +19,45 @@ export const navigationLinks = [
   { id: 1, label: "Home", path: "/", icon: Home, color: "text-pink-400" },
   {
     id: 2,
+    label: "About",
+    path: "/about",
+    icon: User,
+    color: "text-blue-400",
+  },
+   {
+    id: 3,
     label: "Products",
     path: "/products",
     icon: Bike,
     color: "text-orange-400",
   },
   {
-    id: 3,
+    id: 4,
     label: "Blog",
     path: "/blogs",
     icon: BookOpenText,
     color: "text-purple-400",
   },
+
   {
-    id: 4,
+    id: 5,
     label: "FAQ's",
     path: "/frequently-asked-questions",
     icon: Star,
     color: "text-yellow-400",
   },
+   {
+    id: 6,
+    label: "Contact",
+    path: "/contact",
+    icon: Phone,
+    color: "text-green-400",
+  },
 ];
 
 /* ================= SUPPORT ================= */
+// Commented out - not needed for main navigation
+/*
 export const supportLinks = [
   {
     id: 1,
@@ -69,8 +88,11 @@ export const supportLinks = [
     color: "text-indigo-400",
   },
 ];
+*/
 
 /* ================= SOCIAL MEDIA ================= */
+// Commented out - not needed for main navigation
+/*
 // Note: In newer Lucide versions, use Facebook, Instagram, Twitter
 export const socialLinks = [
   {
@@ -98,3 +120,4 @@ export const socialLinks = [
     color: "text-sky-500",
   },
 ];
+*/
