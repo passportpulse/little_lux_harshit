@@ -1,158 +1,162 @@
-import Section from "../../components/layout/Section";
-import Container from "../../components/layout/Container";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Contact() {
   return (
-    <>
-      {/* Hero */}
-      <Section className="bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-800">
-              Contact <span className="text-blue-500">Little Luxe</span> 📞
-            </h1>
-            <p className="mt-4 text-slate-600 text-lg">
-              Get in Touch with Us - We're Here to Help! 🛠️
-            </p>
-          </div>
-        </Container>
-      </Section>
+    <div className="w-full">
 
-      {/* Contact Information */}
-      <Section className="bg-white">
-        <Container size="sm">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Details */}
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">
-                Get in Touch
-              </h2>
-              
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-full">
-                  <Phone className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Phone</h3>
-                  <p className="text-slate-600">+91 98765 43210</p>
-                  <p className="text-slate-600">+91 12345 67890</p>
-                </div>
-              </div>
+      {/* HERO */}
+      <div
+        className="relative py-20 px-6 text-center text-white bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/images/contact-bg.png')" // apni image ka path yaha lagao
+        }}
+      >
+        {/* overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-purple-100 p-3 rounded-full">
-                  <Mail className="w-6 h-6 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Email</h3>
-                  <p className="text-slate-600">info@littleluxe.com</p>
-                  <p className="text-slate-600">support@littleluxe.com</p>
-                </div>
-              </div>
+        <div className="relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Contact Little Luxe
+          </h1>
+          <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+            We'd love to hear from you. Reach out for any queries, support,
+            or information about our products.
+          </p>
+        </div>
+      </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-pink-100 p-3 rounded-full">
-                  <MapPin className="w-6 h-6 text-pink-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Address</h3>
-                  <p className="text-slate-600">
-                    Little Luxe Showroom<br />
-                    123, Kid's Street, Kolkata<br />
-                    West Bengal - 700001
-                  </p>
-                </div>
-              </div>
+      {/* CONTACT SECTION */}
+      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
 
-              <div className="flex items-start gap-4">
-                <div className="bg-yellow-100 p-3 rounded-full">
-                  <Clock className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-800">Business Hours</h3>
-                  <p className="text-slate-600">Monday - Saturday: 10:00 AM - 7:00 PM</p>
-                  <p className="text-slate-600">Sunday: 11:00 AM - 6:00 PM</p>
-                </div>
-              </div>
+        {/* CONTACT INFO */}
+        <div className="space-y-8">
+
+          <h2 className="text-3xl font-bold text-slate-800">
+            Get in Touch
+          </h2>
+
+          {/* Phone */}
+   <div className="flex gap-4 p-5 rounded-xl shadow-md bg-white hover:shadow-lg transition">
+  
+  <div className="bg-blue-100 w-14 h-14 rounded-xl flex items-center justify-center">
+    <Phone className="text-blue-600 w-6 h-6" />
+  </div>
+
+  <div>
+    <h3 className="font-semibold text-lg">Phone</h3>
+    <p className="text-slate-600">+91 9831046782</p>
+    <p className="text-slate-600">+91 9073140151</p>
+  </div>
+
+</div>
+
+          {/* Email */}
+          <div className="flex gap-4 p-5 rounded-xl shadow-md bg-white hover:shadow-lg transition">
+            <div className="bg-purple-100 w-14 h-14 rounded-xl flex items-center justify-center">
+              <Mail className="text-purple-600 w-6 h-6" />
             </div>
-
-            {/* Contact Form */}
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6">
-                Send us a Message
-              </h2>
-              
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Enter your name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="How can we help?"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows="4"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Tell us more about your inquiry..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Send Message 🚀
-                </button>
-              </form>
+            <div>
+              <h3 className="font-semibold text-lg">Email</h3>
+              <p className="text-slate-600">littleluxe161@gmail.com</p>
+       
             </div>
           </div>
-        </Container>
-      </Section>
 
-      {/* Map Section */}
-      <Section className="bg-slate-50">
-        <Container>
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">
-              Find Us Here 📍
-            </h2>
-            <div className="bg-slate-200 h-64 rounded-lg flex items-center justify-center">
-              <p className="text-slate-600">Map will be displayed here</p>
+          {/* Address */}
+          <div className="flex gap-4 p-5 rounded-xl shadow-md bg-white hover:shadow-lg transition">
+            <div className="bg-pink-100 w-14 h-14 rounded-xl flex items-center justify-center">
+              <MapPin className="text-pink-600 w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg">Address</h3>
+              <p className="text-slate-600">
+                C/O :Gouranga Cycle Co <br />
+                62, Bentinck Street, Kolkata <br />
+                Kolkata-700069
+              </p>
             </div>
           </div>
-        </Container>
-      </Section>
-    </>
+
+          {/* Hours */}
+          <div className="flex gap-4 p-5 rounded-xl shadow-md bg-white hover:shadow-lg transition">
+            <div className="bg-yellow-100 w-14 h-14 rounded-xl flex items-center justify-center">
+              <Clock className="text-yellow-600 w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg">Business Hours</h3>
+              <p className="text-slate-600">
+                Monday - Saturday: 10:00 AM - 7:00 PM
+              </p>
+              <p className="text-slate-600">
+                Sunday: 11:00 AM - 6:00 PM
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        {/* CONTACT FORM */}
+        <div className="bg-white shadow-xl rounded-2xl p-8">
+
+          <h2 className="text-2xl font-bold text-slate-800 mb-6">
+            Send us a Message
+          </h2>
+
+          <form className="space-y-5">
+
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+
+            <input
+              type="text"
+              placeholder="Subject"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+
+            <textarea
+              rows="4"
+              placeholder="Your Message"
+              className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+
+            <button
+              type="submit"
+              className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:scale-105 transition"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+
+      {/* MAP */}
+      <div className="bg-slate-100 py-16 px-6 text-center">
+
+        <h2 className="text-3xl font-bold text-slate-800 mb-8">
+          Find Us Here 📍
+        </h2>
+
+        <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            title="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5372.956643591758!2d88.35008277661865!3d22.567385079495494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277a62f10208d%3A0xc62165c88030beaa!2sGAURANGA%20CYCLE%20CO.!5e1!3m2!1sen!2sin!4v1773146721885!5m2!1sen!2sin"
+            className="w-full h-[400px] border-0"
+          />
+        </div>
+
+      </div>
+
+    </div>
   );
 }
