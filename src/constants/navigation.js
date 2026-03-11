@@ -31,16 +31,16 @@ export const navigationLinks = [
     icon: Bike,
     color: "text-orange-400",
   },
-  {
-    id: 4,
-    label: "Blog",
-    path: "/blogs",
-    icon: BookOpenText,
-    color: "text-purple-400",
-  },
+  // {
+  //   id: 4,
+  //   label: "Blog",
+  //   path: "/blogs",
+  //   icon: BookOpenText,
+  //   color: "text-purple-400",
+  // },
 
   {
-    id: 5,
+    id: 4,
     label: "FAQ's",
     path: "/frequently-asked-questions",
     icon: Star,
