@@ -26,7 +26,7 @@ const images = [
   }
 ]
 export default function Home() {
-  const products = productsData.products;
+  const products = productsData?.products || [];
 
   const [current, setCurrent] = useState(0)
 
@@ -47,7 +47,11 @@ export default function Home() {
   const ProductCard = ({ product }) => (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
       <div className="relative h-40 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-        <div className="text-5xl opacity-20">🚲</div>
+        <img 
+          src={product.images?.[0]} 
+          alt={product.name}
+          className="w-full h-full object-contain p-4"
+        />
         <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
           -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
         </div>
@@ -144,7 +148,7 @@ export default function Home() {
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={product.image}
+                    src={product.images?.[0]}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
                   />
@@ -224,7 +228,7 @@ export default function Home() {
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={product.image}
+                    src={product.images?.[0]}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
                   />
@@ -304,7 +308,7 @@ export default function Home() {
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={product.image}
+                    src={product.images?.[0]}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
                   />
@@ -443,7 +447,7 @@ export default function Home() {
                 {/* Image */}
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={product.image}
+                    src={product.images?.[0]}
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
                   />

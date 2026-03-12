@@ -9,7 +9,9 @@ export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("name");
 
-  const products = productsData.products;
+  const products = productsData?.products || [];
+  console.log('Products Data:', products);
+  console.log('First product:', products[0]);
 
   // Get unique categories
   const categories = ["All", ...new Set(products.map(product => product.category))];
@@ -119,7 +121,11 @@ export default function Products() {
                   <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                     -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
                   </div>
-                  <div className="text-6xl opacity-20">🚲</div>
+                  <img 
+                    src={product.images?.[0]}
+                    alt={product.name}
+                    className="w-full h-full object-contain p-4"
+                  />
                   
                   {/* Hover Actions */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">

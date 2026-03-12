@@ -7,7 +7,7 @@
       "originalPrice": 1600,
       "description": "Tri Cycle - Single piece box packing with music and light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/HunterBike.png"]
+      "images": ["/src/assets/product/Hunterbike.png"]
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "originalPrice": 6200,
       "description": "Tri cycle with multiple options like pedaling, parental handle for guardian movement, and stroller option. Additional features include front ghera, foot rest, hood, front and back basket.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/DYNOTRICYCLE(3-IN-1).png"]
+      "images": ["/src/assets/product/DYNOTRICYCLE(3-IN-1).png"]
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "originalPrice": 1900,
       "description": "Tri Cycle - Single piece box packing with musical face light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/ExplorerBullet.png"]
+      "images": ["/src/assets/product/ExplorerBullet.png"]
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "originalPrice": 4900,
       "description": "Tri cycle with cushion seat, handle, foot rest, backrest, front and back basket. Premium quality single piece box packing.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/n-force-canopy.png"]
+      "images": ["/src/assets/product/n-force-canopy.png"]
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "originalPrice": 1500,
       "description": "Jhulla with pram and mosquito net in box packing.",
       "category": "Jhulla",
-      "images": ["/assets/products/PremiumRevolvingHoodBoxJhulla.png"]
+      "images": ["/src/assets/product/PremiumRevolvingHoodBoxJhulla.png"]
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "originalPrice": 1200,
       "description": "Rocking and ride-on musical toy.",
       "category": "Ride-On",
-      "images": ["/assets/products/MaharajaSDXMusical.png"]
+      "images": ["/src/assets/product/MaharajaSDXMusical.png"]
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "originalPrice": 1800,
       "description": "Big scooty large size ride-on.",
       "category": "Scooty",
-      "images": ["/assets/products/TSC-140.png"]
+      "images": ["/src/assets/product/TSC-140.png"]
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "originalPrice": 860,
       "description": "Rocking and ride-on toy.",
       "category": "Ride-On",
-      "images": ["/assets/products/Gajanand.png"]
+      "images": ["/src/assets/product/Gajanand.png"]
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "originalPrice": 7500,
       "description": "Battery operated bike with 12V battery, hand accelerator, leg brake, USB port, MP3 player, and LED wheels.",
       "category": "Battery Bike",
-      "images": ["/assets/products/B011Bike.png"]
+      "images": ["/src/assets/product/B011Bike.png"]
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "originalPrice": 2100,
       "description": "Scooty and sitting ride-on with LED light wheels and musical face.",
       "category": "Scooty",
-      "images": ["/assets/products/SimbaPlus.png", "/assets/products/SimbaPlus1.png","/assets/products/SimbaPlus2.png"]
+      "images": ["/src/assets/product/SimbaPlus.png", "/src/assets/product/SimbaPlus1.png","/src/assets/product/SimbaPlus2.png"]
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "originalPrice": 2400,
       "description": "Tri cycle with cushion seat, handle, ghera, backrest, foot rest, front and back basket. Premium quality single piece box packing.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/n-force-handle.jpg"]
+      "images": ["/src/assets/product/n-force-handle.jpg"]
     },
     {
       "id": 12,
@@ -106,7 +106,7 @@
       "originalPrice": 3500,
       "description": "3 slide adjustable stroller with reversal handle, revolving wheels, double cushion mattress for extra comfort, mosquito net and easily foldable design.",
       "category": "Stroller",
-      "images": ["/assets/products/BabyStrollerandPrame.png"]
+      "images": ["/src/assets/product/BabyStrollerandPrame.png"]
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "originalPrice": 950,
       "description": "Tri cycle with music, light and back basket.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/boxer-action-wheel.jpg"]
+      "images": ["/src/assets/product/boxer-action-wheel.jpg"]
     },
     {
       "id": 14,
@@ -124,7 +124,7 @@
       "originalPrice": 1600,
       "description": "Tri cycle with front ghera, parental handle, foot rest and musical face light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/T-1(R-120).png"]
+      "images": ["/src/assets/product/T-1(R-120).png"]
     },
     {
       "id": 15,
@@ -133,7 +133,7 @@
       "originalPrice": 1400,
       "description": "Ride-on toy with musical features.",
       "category": "Ride-On",
-      "images": ["/assets/products/SpeedyRide-On.png"]
+      "images": ["/src/assets/product/SpeedyRide-On.png"]
     },
     {
       "id": 16,
@@ -142,7 +142,7 @@
       "originalPrice": 1400,
       "description": "Jhulla with pram and mosquito net.",
       "category": "Jhulla",
-      "images": ["/assets/products/PremiumRevolvingHoodJhulla.png"]
+      "images": ["/src/assets/product/PremiumRevolvingHoodJhulla.png"]
     },
     {
       "id": 17,
@@ -151,7 +151,7 @@
       "originalPrice": 1350,
       "description": "Magick Car (Swing Car) ride-on toy.",
       "category": "Swing Car",
-      "images": ["/assets/products/X-3MagickCar.png"]
+      "images": ["/src/assets/product/X-3MagickCar.png"]
     },
     {
       "id": 18,
@@ -160,7 +160,7 @@
       "originalPrice": 600,
       "description": "Tri cycle for kids.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/round-duck.png"]
+      "images": ["/src/assets/product/round-duck.png"]
     },
     {
       "id": 19,
@@ -169,7 +169,7 @@
       "originalPrice": 950,
       "description": "Magick Car (Swing Car) ride-on toy.",
       "category": "Swing Car",
-      "images": ["/assets/products/X-3MagickCar.png"]
+      "images": ["/src/assets/product/X-3MagickCar.png"]
     },
     {
       "id": 20,
@@ -178,7 +178,7 @@
       "originalPrice": 2200,
       "description": "Jhulla with mosquito net and small wheels for easy movement from one place to another.",
       "category": "Jhulla",
-      "images": ["/assets/products/KartzJhulla(Credle).png"]
+      "images": ["/src/assets/product/KartzJhulla(Credle).png"]
     },
     {
       "id": 21,
@@ -187,7 +187,7 @@
       "originalPrice": 1650,
       "description": "Magick Car (Swing Car) ride-on toy.",
       "category": "Swing Car",
-      "images": ["/assets/products/ShellyMagickCar.png"]
+      "images": ["/src/assets/product/ShellyMagickCar.png"]
     },
     {
       "id": 22,
@@ -196,7 +196,7 @@
       "originalPrice": 1790,
       "description": "Magick Car (Swing Car) ride-on toy.",
       "category": "Swing Car",
-      "images": ["/assets/products/ChopperMagickCar.png"]
+      "images": ["/src/assets/product/ChopperMagickCar.png"]
     },
     {
       "id": 23,
@@ -205,7 +205,7 @@
       "originalPrice": 850,
       "description": "Rocking and ride-on toy for kids.",
       "category": "Ride-On",
-      "images": ["/assets/products/FunnyBear.png"]
+      "images": ["/src/assets/product/FunnyBear.png"]
     },
     {
       "id": 24,
@@ -214,7 +214,7 @@
       "originalPrice": 950,
       "description": "Tri cycle with music, light and back basket.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/HunterNikel.png"]
+      "images": ["/src/assets/product/HunterNikel.png"]
     },
     {
       "id": 25,
@@ -223,7 +223,7 @@
       "originalPrice": 1350,
       "description": "Ride-on toy with handle, ghera and musical features.",
       "category": "Ride-On",
-      "images": ["/assets/products/KittyRide-onDLX.png"]
+      "images": ["/src/assets/product/KittyRide-onDLX.png"]
     },
     {
       "id": 26,
@@ -232,7 +232,7 @@
       "originalPrice": 950,
       "description": "Tri cycle with gaddi seat and metal wheels.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/HondaSingle.png"]
+      "images": ["/src/assets/product/HondaSingle.png"]
     },
     {
       "id": 27,
@@ -241,7 +241,7 @@
       "originalPrice": 600,
       "description": "Plastic ring musical walker for babies.",
       "category": "Walker",
-      "images": ["/assets/products/8BandPVCWalkerMusical.png"]
+      "images": ["/src/assets/product/8BandPVCWalkerMusical.png"]
     },
     {
       "id": 28,
@@ -250,7 +250,7 @@
       "originalPrice": 500,
       "description": "Hanging swing for kids.",
       "category": "Swing",
-      "images": ["/assets/products/OyoHangingSwing.png"]
+      "images": ["/src/assets/product/OyoHangingSwing.png"]
     },
     {
       "id": 29,
@@ -259,7 +259,7 @@
       "originalPrice": 1300,
       "description": "Scooty with LED light wheels and musical handle.",
       "category": "Scooty",
-      "images": ["/assets/products/CR7SPEEDRUNNERLED.png","/assets/products/CR7SPEEDRUNNERLED1.png" ]
+      "images": ["/src/assets/product/CR7SPEEDRUNNERLED.png","/src/assets/product/CR7SPEEDRUNNERLED1.png" ]
     },
     {
       "id": 30,
@@ -268,7 +268,7 @@
       "originalPrice": 1600,
       "description": "Tri cycle with single piece box packing, music and light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/JavaxBike.png"]
+      "images": ["/src/assets/product/JavaxBike.png"]
     },
     {
       "id": 31,
@@ -277,7 +277,7 @@
       "originalPrice": 2400,
       "description": "Tri cycle with musical face light, front ghera, hood and foot rest. Single piece box packing.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/Alexa111Hood.png"]
+      "images": ["/src/assets/product/Alexa111Hood.png"]
     },
     {
       "id": 32,
@@ -286,7 +286,7 @@
       "originalPrice": 1200,
       "description": "Hanging swing with musical features.",
       "category": "Swing",
-      "images": ["/assets/products/BoxSwing.png"]
+      "images": ["/src/assets/product/BoxSwing.png"]
     },
     {
       "id": 33,
@@ -295,7 +295,7 @@
       "originalPrice": 3000,
       "description": "Tri cycle bike model with musical face light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/ATVBike.png"]
+      "images": ["/src/assets/product/ATVBike.png"]
     },
         {
       "id": 34,
@@ -304,7 +304,7 @@
       "originalPrice": 7500,
       "description": "Premium baby stroller with 5-point safety harness, 360° swivel front wheels with brakes and suspension, 3-level seat adjustment, two-side handle adjustment, storage basket for toys, bottle holder, back storage bag, see-through window, soft breathable sitting cushion, and two-level foot adjustment.",
       "category": "Stroller",
-      "images": ["/assets/products/BABYSTROLLER(PRAMBULATOR)901.png"]
+      "images": ["/src/assets/product/BABYSTROLLER(PRAMBULATOR)901.png"]
     },
     {
       "id": 35,
@@ -313,7 +313,7 @@
       "originalPrice": 3200,
       "description": "Tri cycle with parental handle, canopy, musical face, foot rest, cushion leather seat, baby support ghera, and front & back basket. Premium quality.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/n-force-canopy.png"]
+      "images": ["/src/assets/product/n-force-canopy.png"]
     },
     {
       "id": 36,
@@ -322,7 +322,7 @@
       "originalPrice": 650,
       "description": "Heavy duty nickel musical walker.",
       "category": "Walker",
-      "images": ["/assets/products/ChourasNikelWalkerMusical.png"]
+      "images": ["/src/assets/product/ChourasNikelWalkerMusical.png"]
     },
     {
       "id": 37,
@@ -331,7 +331,7 @@
       "originalPrice": 850,
       "description": "Tri cycle with music, light and back basket.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/Ganesha.png"]
+      "images": ["/src/assets/product/Ganesha.png"]
     },
     {
       "id": 38,
@@ -340,7 +340,7 @@
       "originalPrice": 7620,
       "description": "Painted battery operated bike with MP3, USB music, foot accelerator and heavy duty build.",
       "category": "Battery Bike",
-      "images": ["/assets/products/cb.png","/assets/products/cb.1spng"]
+      "images": ["/src/assets/product/cb.png","/src/assets/product/cb.1spng"]
     },
     {
       "id": 39,
@@ -349,7 +349,7 @@
       "originalPrice": 1000,
       "description": "Magick Car (Swing Car) with backrest.",
       "category": "Swing Car",
-      "images": ["/assets/products/AB.png"]
+      "images": ["/src/assets/product/AB.png"]
     },
     {
       "id": 40,
@@ -358,7 +358,7 @@
       "originalPrice": 800,
       "description": "Tri cycle with music and light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/tT-1(102)MiniPoliceHorn.png"]
+      "images": ["/src/assets/product/tT-1(102)MiniPoliceHorn.png"]
     },
     {
       "id": 41,
@@ -367,7 +367,7 @@
       "originalPrice": 12000,
       "description": "Battery operated car with 12V battery, MP3 USB music, remote control, swing function, Bluetooth and windscreen light.",
       "category": "Battery Car",
-      "images": ["/assets/products/C001CAR2.png","/assets/products/C001CAR.png","/assets/products/C001CAR1.png", "/assets/products/C001CAR3.png"]
+      "images": ["/src/assets/product/C001CAR2.png","/src/assets/product/C001CAR.png","/src/assets/product/C001CAR1.png", "/src/assets/product/C001CAR3.png"]
     },
     {
       "id": 42,
@@ -376,7 +376,7 @@
       "originalPrice": 5600,
       "description": "Premium study table chair with adjustable height, book stand, watch and heavy duty design.",
       "category": "Study Table",
-      "images": ["/assets/products/TABLECHAIR(201).png"]
+      "images": ["/src/assets/product/TABLECHAIR(201).png"]
     },
     {
       "id": 43,
@@ -385,7 +385,7 @@
       "originalPrice": 1400,
       "description": "Tri cycle with parental handle and musical face light.",
       "category": "Tri Cycle",
-      "images": ["/assets/products/t1-999.jpg"]
+      "images": ["/src/assets/product/t1-999.jpg"]
     },
     {
       "id": 44,
@@ -394,7 +394,7 @@
       "originalPrice": 950,
       "description": "Jhulla with pram and mosquito net.",
       "category": "Jhulla",
-      "images": ["/assets/products/Economy4WheelJhulla.png"]
+      "images": ["/src/assets/product/Economy4WheelJhulla.png"]
     }
     
   ]
