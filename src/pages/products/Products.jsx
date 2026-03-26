@@ -1,17 +1,17 @@
 import Section from "../../components/layout/Section";
 import Container from "../../components/layout/Container";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import productsData from "../../data/data.json";
 import { Search, Filter, Heart, ShoppingCart, Star, IndianRupee } from "lucide-react";
 
 export default function Products() {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("name");
 
   const products = productsData?.products || [];
-  console.log('Products Data:', products);
-  console.log('First product:', products[0]);
 
   // Get unique categories
   const categories = ["All", ...new Set(products.map(product => product.category))];
@@ -132,7 +132,8 @@ export default function Products() {
       {sortedProducts.map((product) => (
         <div
           key={product.id}
-          className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden group"
+          onClick={() => navigate(`/products/${product.id}`)}
+          className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden group cursor-pointer"
         >
 
           {/* Image */}
@@ -143,6 +144,13 @@ export default function Products() {
               -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
             </span>
 
+            {/* Multiple Images Indicator */}
+            {product.images && product.images.length > 1 && (
+              <span className="absolute top-3 left-3 bg-black/70 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                {product.images.length} Images
+              </span>
+            )}
+
             <img
               src={product.images?.[0]}
               alt={product.name}
@@ -152,11 +160,25 @@ export default function Products() {
             {/* Hover Buttons */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-3 transition">
 
-              <button className="bg-white p-2 rounded-full hover:bg-orange-100 transition">
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log(`Added ${product.name} to wishlist`);
+                  alert(`${product.name} added to wishlist!`);
+                }}
+                className="bg-white p-2 rounded-full hover:bg-orange-100 transition"
+              >
                 <Heart className="w-4 h-4 text-red-500" />
               </button>
 
-              <button className="bg-white p-2 rounded-full hover:bg-orange-100 transition">
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log(`Added ${product.name} to cart`);
+                  alert(`${product.name} added to cart!`);
+                }}
+                className="bg-white p-2 rounded-full hover:bg-orange-100 transition"
+              >
                 <ShoppingCart className="w-4 h-4 text-orange-500" />
               </button>
 
@@ -213,7 +235,13 @@ export default function Products() {
             </div>
 
             {/* Button */}
-            <button className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold py-2 rounded-lg hover:from-orange-600 hover:to-yellow-600 transition transform hover:scale-105">
+            <button 
+              onClick={() => {
+                console.log(`Added ${product.name} to cart`);
+                alert(`${product.name} added to cart!`);
+              }}
+              className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-semibold py-2 rounded-lg hover:from-orange-600 hover:to-yellow-600 transition transform hover:scale-105"
+            >
               Add to Cart
             </button>
 

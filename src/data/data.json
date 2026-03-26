@@ -29,12 +29,12 @@
     },
     {
       "id": 4,
-      "name": "N-Force With Canopy Parental",
+      "name": "N-Force without canopy",
       "price": 1990,
       "originalPrice": 4900,
-      "description": "Tri cycle with cushion seat, handle, foot rest, backrest, front and back basket. Premium quality single piece box packing.",
+      "description": "Tri Cycle Premium Quality- Cushion Seat- Front Ghera- Foot Rest- Head Rest- Front and Back Basket - Parental Handel - Face Light Musical.",
       "category": "Tri Cycle",
-      "images": ["/product/n-force-canopy.png"]
+      "images": ["/product/Picture1.png", "/product/Picture2.png"]
     },
     {
       "id": 5,
@@ -92,12 +92,12 @@
     },
     {
       "id": 11,
-      "name": "N-Force Handle",
+      "name": "N-Force with canopy",
       "price": 1750,
       "originalPrice": 2400,
-      "description": "Tri cycle with cushion seat, handle, ghera, backrest, foot rest, front and back basket. Premium quality single piece box packing.",
+      "description": "Tri Cycle Premium Quality- Cushion Seat- Front Ghera- Foot Rest- Head Rest- Front and Back Basket – Canopy - Parental Handel - Face Light Musical.",
       "category": "Tri Cycle",
-      "images": ["/product/n-force-handle.jpg"]
+      "images": ["/product/Picture3.png", "/product/Picture4.png"]
     },
     {
       "id": 12,
@@ -395,6 +395,24 @@
       "description": "Jhulla with pram and mosquito net.",
       "category": "Jhulla",
       "images": ["/product/Economy4WheelJhulla.png"]
+    },
+       {
+      "id": 45,
+      "name": "B-Force without canopy",
+      "price": 1750,
+      "originalPrice": 2400,
+      "description": "Tri Cycle Premium Quality- Cushion Seat- Front Ghera- Foot Rest- Head Rest- Front and Back Basket - Parental Handel - Face Light Musical",
+      "category": "Tri Cycle",
+      "images": ["/product/Picture5.png"]
+    },
+       {
+      "id": 46,
+      "name": "B-Force with canopy",
+      "price": 1750,
+      "originalPrice": 2400,
+      "description": "Tri Cycle Premium Quality- Cushion Seat- Front Ghera- Foot Rest- Head Rest- Front and Back Basket – Canopy - Parental Handel - Face Light Musical.",
+      "category": "Tri Cycle",
+      "images": ["/product/Picture6.png", "/product/Picture7.png"]
     }
     
   ]

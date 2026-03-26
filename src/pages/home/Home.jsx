@@ -2,10 +2,12 @@ import Section from "../../components/layout/Section";
 import Container from "../../components/layout/Container";
 import { ArrowRight, Star, IndianRupee, Bike, Car, Battery, Zap } from "lucide-react";
 import productsData from "../../data/data.json";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import hero1 from "../../assets/images/hero1.png";
 import hero2 from "../../assets/images/contact-bg.png";
 import hero3 from "../../assets/images/faq-bg.png";
+import littleluxe from "../../assets/product/A+B Panda Backrest Magick Car.png";
 
 
 const images = [
@@ -26,7 +28,10 @@ const images = [
   }
 ]
 export default function Home() {
+  const navigate = useNavigate();
+  console.log('Home component loading...');
   const products = productsData?.products || [];
+  console.log('Products in Home:', products);
 
   const [current, setCurrent] = useState(0)
 
@@ -110,7 +115,49 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20"></div>
 
       </div>
+    {/* STORY */}
+      <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
 
+        <div>
+          <img
+            src={littleluxe}
+            alt="Little Luxe"
+            className="rounded-2xl shadow-xl"
+          />
+        </div>
+
+        <div className="space-y-6 text-slate-700 leading-relaxed">
+
+          <p>
+            I’m <strong>Ranabir Das</strong>, proud owner of a legacy business
+            rooted in love, care, and childhood joy.
+          </p>
+
+          <p>
+            Our journey began in <strong>1969</strong>, when my late father
+            <strong> Shri Sambhunath Das </strong>
+            started a baby rides wholesale business in West Bengal.
+          </p>
+
+          <p>
+            In <strong>1993</strong>, after completing my graduation,
+            I took the responsibility of growing this legacy.
+          </p>
+
+          <p>
+            With the belief that nothing is more beautiful than
+            the smile of a child, we launched our brand
+            <strong> Little Luxe – Khushi Bachoki </strong>.
+          </p>
+
+          <p>
+            In <strong>2024</strong>, we entered manufacturing in
+            collaboration with <strong>Baby Ride On</strong>,
+            bringing innovative and safe ride-on toys for children.
+          </p>
+
+        </div>
+      </div>
       {/* Featured Tri Cycles */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -170,7 +217,11 @@ export default function Home() {
                   </p>
 
                   {/* View Details */}
-                  <button className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" style={{ backgroundColor: '#fcd8be' }}>
+                  <button 
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
+                    style={{ backgroundColor: '#fcd8be' }}
+                  >
                     View Details
                   </button>
 
@@ -250,7 +301,11 @@ export default function Home() {
                   </p>
 
                   {/* View Details */}
-                  <button className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" style={{ backgroundColor: '#fcd8be' }}>
+                  <button 
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
+                    style={{ backgroundColor: '#fcd8be' }}
+                  >
                     View Details
                   </button>
 
@@ -330,7 +385,11 @@ export default function Home() {
                   </p>
 
                   {/* View Details */}
-                  <button className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" style={{ backgroundColor: '#fcd8be' }}>
+                  <button 
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
+                    style={{ backgroundColor: '#fcd8be' }}
+                  >
                     View Details
                   </button>
 
@@ -397,7 +456,7 @@ export default function Home() {
               {/* Main Image */}
               <div className="relative rounded-3xl overflow-hidden ">
                 <img
-                  src="https://images.unsplash.com/photo-1588441259691-b04ba5e4ddf5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFydHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900"
+                  src="/product/Picture7.png"
                   alt="Artist workspace"
                   className="w-full h-[400px] object-cover"
                 />
@@ -469,7 +528,11 @@ export default function Home() {
                   </p>
 
                   {/* View Details */}
-                  <button className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" style={{ backgroundColor: '#fcd8be' }}>
+                  <button 
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
+                    style={{ backgroundColor: '#fcd8be' }}
+                  >
                     View Details
                   </button>
 
