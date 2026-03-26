@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-primary shadow-sm">
+    <nav className="sticky top-0 z-50 bg-linear-to-b from-white via-primary/40 to-primary border-t border-primary-dark/40 shadow-sm">
       <Container>
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
 

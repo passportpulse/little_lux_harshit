@@ -216,13 +216,13 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/* View Details */}
+                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
                     style={{ backgroundColor: '#fcd8be' }}
                   >
-                    View Details
+                   Buy Now
                   </button>
 
                 </div>
@@ -300,13 +300,13 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/* View Details */}
+                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
                     style={{ backgroundColor: '#fcd8be' }}
                   >
-                    View Details
+                   Buy Now
                   </button>
 
                 </div>
@@ -384,13 +384,13 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/* View Details */}
+                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
                     style={{ backgroundColor: '#fcd8be' }}
                   >
-                    View Details
+                   Buy Now
                   </button>
 
                 </div>
@@ -527,13 +527,13 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/* View Details */}
+                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
                     style={{ backgroundColor: '#fcd8be' }}
                   >
-                    View Details
+                   Buy Now
                   </button>
 
                 </div>
