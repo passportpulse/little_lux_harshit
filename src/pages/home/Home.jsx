@@ -7,14 +7,14 @@ import { useState, useEffect } from "react";
 import hero from "../../assets/images/hero.png";
 import hero1 from "../../assets/images/hero1.png";
 import hero2 from "../../assets/images/contact-bg.png";
-import hero3 from "../../assets/images/faq-bg.png";
+import hero3 from "../../assets/images/hero4.png";
 import littleluxe from "../../assets/product/Picture5.png";
 import { Palette, ShieldCheck, Feather } from "lucide-react";
 
 const images = [
   {
     id: 1,
-    src: hero,
+    src: hero3,
     alt: "Hero"
   },
   {
@@ -22,14 +22,10 @@ const images = [
     src: hero1,
     alt: "Hero 1"
   },
+
   {
     id: 3,
-    src: hero2,
-    alt: "Cycle 2"
-  },
-  {
-    id: 4,
-    src: hero3,
+    src: hero,
     alt: "Cycle 3"
   }
 ]
@@ -106,7 +102,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[70vh] overflow-hidden">
+      <div className="relative w-full h-[100vh] overflow-hidden">
 
         {images.map((img, index) => (
           <img
@@ -718,83 +714,83 @@ export default function Home() {
 
       {/* Features Section */}
 
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
 
-    {/* Heading */}
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
-        Why Kids Love Our Cycles
-      </h2>
-      <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
-        Designed with care, safety, and fun in mind — our cycles bring joy, comfort, 
-        and confidence to every child’s riding experience.
-      </p>
-    </div>
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+              Why Kids Love Our Cycles
+            </h2>
+            <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
+              Designed with care, safety, and fun in mind — our cycles bring joy, comfort,
+              and confidence to every child’s riding experience.
+            </p>
+          </div>
 
-    {/* Cards */}
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      {/* Card 1 */}
-      <div className="group bg-purple-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+            {/* Card 1 */}
+            <div className="group bg-purple-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
 
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-5 group-hover:scale-110 transition">
-          <Palette className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-5 group-hover:scale-110 transition">
+                <Palette className="w-8 h-8 text-purple-600" />
+              </div>
+
+              <h3 className="font-semibold text-xl text-slate-800">
+                Attractive & Fun Designs
+              </h3>
+
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                Eye-catching colors and playful designs that instantly grab kids’ attention
+                and make every ride exciting.
+              </p>
+
+            </div>
+
+
+            {/* Card 2 */}
+            <div className="group bg-yellow-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mx-auto mb-5 group-hover:scale-110 transition">
+                <ShieldCheck className="w-8 h-8 text-yellow-600" />
+              </div>
+
+              <h3 className="font-semibold text-xl text-slate-800">
+                Advanced Safety Features
+              </h3>
+
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                Built with durable frames, stable balance, and smooth braking systems
+                to ensure a safe and worry-free ride.
+              </p>
+
+            </div>
+
+
+            {/* Card 3 */}
+            <div className="group bg-blue-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+
+              <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-5 group-hover:scale-110 transition">
+                <Feather className="w-8 h-8 text-blue-600" />
+              </div>
+
+              <h3 className="font-semibold text-xl text-slate-800">
+                Lightweight & Easy Handling
+              </h3>
+
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                Designed to be lightweight so kids can ride, control, and carry
+                their cycles with ease and confidence.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
-
-        <h3 className="font-semibold text-xl text-slate-800">
-          Attractive & Fun Designs
-        </h3>
-
-        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-          Eye-catching colors and playful designs that instantly grab kids’ attention 
-          and make every ride exciting.
-        </p>
-
-      </div>
-
-
-      {/* Card 2 */}
-      <div className="group bg-yellow-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
-
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mx-auto mb-5 group-hover:scale-110 transition">
-          <ShieldCheck className="w-8 h-8 text-yellow-600" />
-        </div>
-
-        <h3 className="font-semibold text-xl text-slate-800">
-          Advanced Safety Features
-        </h3>
-
-        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-          Built with durable frames, stable balance, and smooth braking systems 
-          to ensure a safe and worry-free ride.
-        </p>
-
-      </div>
-
-
-      {/* Card 3 */}
-      <div className="group bg-blue-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
-
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-5 group-hover:scale-110 transition">
-          <Feather className="w-8 h-8 text-blue-600" />
-        </div>
-
-        <h3 className="font-semibold text-xl text-slate-800">
-          Lightweight & Easy Handling
-        </h3>
-
-        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-          Designed to be lightweight so kids can ride, control, and carry 
-          their cycles with ease and confidence.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+      </section>
 
 
     </>
