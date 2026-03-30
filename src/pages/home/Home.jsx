@@ -7,16 +7,15 @@ import { useState, useEffect } from "react";
 import hero from "../../assets/images/hero.png";
 import hero1 from "../../assets/images/hero5.png";
 import hero3 from "../../assets/images/hero4.png";
-import littleluxe from "../../assets/product/Picture5.png";
 import littleluxe from "../../assets/owner.png";
 import { Palette, ShieldCheck, Feather } from "lucide-react";
 
 const images = [
-  {
-    id: 1,
-    src: hero3,
-    alt: "Hero"
-  },
+  // {
+  //   id: 1,
+  //   src: hero3,
+  //   alt: "Hero"
+  // },
   {
     id: 2,
     src: hero1,
@@ -114,8 +113,7 @@ export default function Home() {
           />
         ))}
 
-        {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+      
 
       </div>
       {/* STORY */}
