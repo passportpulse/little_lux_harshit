@@ -8,6 +8,7 @@ import hero from "../../assets/images/hero.png";
 import hero1 from "../../assets/images/hero5.png";
 import hero3 from "../../assets/images/hero4.png";
 import littleluxe from "../../assets/product/Picture5.png";
+import littleluxe from "../../assets/owner.png";
 import { Palette, ShieldCheck, Feather } from "lucide-react";
 
 const images = [
