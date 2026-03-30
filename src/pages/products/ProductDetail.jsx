@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, Heart, ShoppingCart, Star, IndianRupee, Plus, Minus, Truck, Shield, RotateCcw } from "lucide-react";
+import { ArrowLeft, Heart, ShoppingCart, Star, IndianRupee, Plus, Minus, Truck, Shield, RotateCcw, Send, X, User, Phone, Mail } from "lucide-react";
 import productsData from "../../data/data.json";
 import Container from "../../components/layout/Container";
 
@@ -9,6 +9,14 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [showBuyForm, setShowBuyForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    address: ""
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   console.log('Product ID from params:', id);
   
@@ -37,16 +45,32 @@ export default function ProductDetail() {
 
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
 
-  const handleAddToCart = () => {
-    // Add to cart logic here
-    console.log(`Added ${quantity} x ${product.name} to cart`);
-    alert(`${quantity} x ${product.name} added to cart!`);
+  const handleBuyNow = () => {
+    setShowBuyForm(true);
   };
 
-  const handleBuyNow = () => {
-    // Buy now logic here
-    console.log(`Buy now: ${quantity} x ${product.name}`);
-    alert(`Proceeding to checkout with ${quantity} x ${product.name}`);
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Buy Now Form Data:", {
+      ...formData,
+      product: product.name,
+      quantity: quantity,
+      totalPrice: product.price * quantity
+    });
+    setIsSubmitted(true);
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setShowBuyForm(false);
+      setFormData({ name: "", phone: "", email: "", address: "" });
+    }, 3000);
   };
 
   const handleQuantityChange = (type) => {
@@ -204,15 +228,8 @@ export default function ProductDetail() {
             {/* Action Buttons */}
             <div className="flex gap-4">
               <button
-                onClick={handleAddToCart}
-                className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 rounded-2xl font-bold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-              >
-                <ShoppingCart className="w-6 h-6" />
-                Add to Cart
-              </button>
-              <button
                 onClick={handleBuyNow}
-                className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 rounded-2xl font-bold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 rounded-2xl font-bold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
               >
                 Buy Now
               </button>
@@ -236,6 +253,127 @@ export default function ProductDetail() {
           </div>
         </div>
       </Container>
+
+      {/* Buy Now Modal/Form */}
+      {showBuyForm && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            {/* Header */}
+            <div className="p-6 border-b border-slate-200">
+              <div className="flex items-center justify-between">
+                <h2 className="text-2xl font-bold text-slate-800">Complete Your Order</h2>
+                <button
+                  onClick={() => setShowBuyForm(false)}
+                  className="p-2 rounded-full hover:bg-slate-100 transition"
+                >
+                  <X className="w-5 h-5 text-slate-500" />
+                </button>
+              </div>
+              
+              {/* Product Summary */}
+              <div className="mt-4 p-4 bg-blue-50 rounded-xl">
+                <h3 className="font-semibold text-slate-800">{product.name}</h3>
+                <div className="flex items-center justify-between mt-2">
+                  <span className="text-slate-600">Quantity: {quantity}</span>
+                  <span className="font-bold text-blue-600">₹{product.price * quantity}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Form Content */}
+            <div className="p-6">
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Send className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">Order Submitted!</h3>
+                  <p className="text-slate-600">We'll contact you soon to confirm your order.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleFormChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleFormChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        placeholder="+91 98765 43210"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Email Address *
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleFormChange}
+                        required
+                        className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">
+                      Delivery Address *
+                    </label>
+                    <textarea
+                      name="address"
+                      value={formData.address}
+                      onChange={handleFormChange}
+                      required
+                      rows="3"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                      placeholder="Enter your complete delivery address"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-5 h-5" />
+                    Submit Order
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

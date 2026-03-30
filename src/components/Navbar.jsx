@@ -59,18 +59,19 @@ export default function Navbar() {
                         onMouseEnter={() => setProductsDropdown(true)}
                         onMouseLeave={() => setProductsDropdown(false)}
                       >
+                            <a
+                          href="/products/little-luxe"
+                          className="block px-6 py-3 text-secondary-dark hover:bg-primary/20 hover:text-secondary transition-colors duration-200 whitespace-nowrap"
+                        >
+                          Little Luxe 
+                        </a>
                         <a
                           href="/products/multi-brand"
                           className="block px-6 py-3 text-secondary-dark hover:bg-primary/20 hover:text-secondary transition-colors duration-200 whitespace-nowrap"
                         >
                           Multi Brand
                         </a>
-                        <a
-                          href="/products/little-luxe"
-                          className="block px-6 py-3 text-secondary-dark hover:bg-primary/20 hover:text-secondary transition-colors duration-200 whitespace-nowrap"
-                        >
-                          Little Luxe Brand
-                        </a>
+                    
                       </div>
                     </div>
                   ) : (
@@ -127,6 +128,13 @@ export default function Navbar() {
                         productsDropdown ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
+                         <a
+                        href="/products/little-luxe"
+                        onClick={() => setOpen(false)}
+                        className="py-2 px-8 text-secondary/80 hover:text-secondary hover:bg-primary/10 transition-colors duration-200 block"
+                      >
+                        Little Luxe Brand
+                      </a>
                       <a
                         href="/products/multi-brand"
                         onClick={() => setOpen(false)}
@@ -134,13 +142,7 @@ export default function Navbar() {
                       >
                         Multi Brand
                       </a>
-                      <a
-                        href="/products/little-luxe"
-                        onClick={() => setOpen(false)}
-                        className="py-2 px-8 text-secondary/80 hover:text-secondary hover:bg-primary/10 transition-colors duration-200 block"
-                      >
-                        Little Luxe Brand
-                      </a>
+                   
                     </div>
                   </div>
                 ) : (
