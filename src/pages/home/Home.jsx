@@ -117,15 +117,22 @@ export default function Home() {
 
       </div>
       {/* STORY */}
-      <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-
-        <div>
-          <img
-            src={littleluxe}
-            alt="Little Luxe"
-            className="rounded-2xl shadow-xl"
-          />
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className=" mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Our Story</h2>
+          <p className="text-slate-600 text-lg max-w-2xl ">
+            A legacy of love, care, and childhood joy spanning over five decades
+          </p>
         </div>
+        
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src={littleluxe}
+              alt="Little Luxe"
+              className="rounded-2xl shadow-xl w-full h-auto max-h-[400px] object-cover"
+            />
+          </div>
 
         <div className="space-y-6 text-slate-700 leading-relaxed">
 
@@ -158,6 +165,7 @@ export default function Home() {
           </p>
 
         </div>
+      </div>
       </div>
 
       <section className="py-16 bg-white">
