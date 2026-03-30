@@ -48,6 +48,7 @@ export default function Home() {
   const featuredRideOns = products.filter(p => p.category === "Ride-On").slice(0, 4);
   const featuredBatteryBikes = products.filter(p => p.category === "Battery Bike").slice(0, 4);
   const featuredScooty = products.filter(p => p.category === "Scooty").slice(0, 4);
+  const featuredLittleLuxe = products.filter(p => p.category === "Little Luxe").slice(0, 8);
 
   const ProductCard = ({ product }) => (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
@@ -158,6 +159,76 @@ export default function Home() {
 
         </div>
       </div>
+
+        <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text- mb-12">
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Little Luxe Collection</h2>
+            <p className="text-slate-600 text-lg max-w-2xl ">
+              Premium quality products designed for comfort and style
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredLittleLuxe.map((product) => (
+              <div
+                key={product.id}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer"
+                onClick={() => navigate(`/products/${product.id}`)}
+              >
+                {/* Image */}
+                <div className="relative h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                  <img 
+                    src={product.images?.[0]}
+                    alt={product.name}
+                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition duration-300"
+                  />
+                  <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                    -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="p-4">
+                  <h3 className="font-bold text-slate-800 mb-2 text-sm group-hover:text-purple-600 transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-slate-500 mb-3 line-clamp-2">
+                    {product.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-1">
+                      <IndianRupee className="w-4 h-4 text-purple-600" />
+                      <span className="text-lg font-bold text-slate-800">{product.price}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <IndianRupee className="w-3 h-3 text-slate-400" />
+                      <span className="text-sm text-slate-400 line-through">{product.originalPrice}</span>
+                    </div>
+                  </div>
+
+                  {/* View Details */}
+                  <button 
+                    onClick={() => navigate(`/products/${product.id}`)}
+                    className="w-full py-2 rounded-lg text-sm font-medium transition" 
+                    style={{ backgroundColor: '#fcd8be' }}
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Button */}
+          <div className="text-center mt-8 lg:hidden">
+            <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
+              View All Little Luxe Products
+            </button>
+          </div>
+        </div>
+      </section>
       {/* Featured Tri Cycles */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">

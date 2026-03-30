@@ -413,7 +413,46 @@
       "description": "Tri Cycle Premium Quality- Cushion Seat- Front Ghera- Foot Rest- Head Rest- Front and Back Basket – Canopy - Parental Handel - Face Light Musical.",
       "category": "Tri Cycle",
       "images": ["/product/Picture6.png", "/product/Picture7.png"]
+    },
+    {
+      "id": 47,
+      "name": "B-Force without canopy",
+      "price": 2999,
+      "originalPrice": 3999,
+      "description": "Premium quality little luxe product with advanced features",
+      "category": "Little Luxe",
+      "images": ["/littleProduct/product1.png", "/littleProduct/product4.png"]
+    },
+    {
+      "id": 48,
+      "name": "N-Force without canopy", 
+      "price": 2499,
+      "originalPrice": 3299,
+      "description": "Comfortable design with ergonomic features",
+      "category": "Little Luxe",
+      "images": ["/littleProduct/product2.png", "/littleProduct/product5.png"]
+    },
+    {
+      "id": 49,
+      "name": "B-Force with canopy",
+      "price": 2799,
+      "originalPrice": 3599,
+      "description": "Sporty design for active kids",
+      "category": "Little Luxe",
+      "images": ["/littleProduct/product3.png", "/littleProduct/product9.png", "/littleProduct/product6.png", "/littleProduct/product8.png"]
+    },
+   
+
+    {
+      "id": 50,
+     "name": "N-Force with canopy",
+      "price": 3799,
+      "originalPrice": 4899,
+      "description": "Royal design with luxury features",
+      "category": "Little Luxe",
+      "images": ["/littleProduct/product7.png"]
     }
+ 
     
   ]
 }
