@@ -4,8 +4,8 @@ import { ArrowRight, Star, IndianRupee, Bike, Car, Battery, Zap, MapPin, Phone, 
 import productsData from "../../data/data.json";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import hero from "../../assets/images/hero.png";
-import hero1 from "../../assets/images/hero5.png";
+import hero from "../../assets/images/hero9.png";
+import hero1 from "../../assets/images/hero8.png";
 import hero3 from "../../assets/images/hero6.png";
 import littleluxe from "../../assets/owner.png";
 import { Palette, ShieldCheck, Feather } from "lucide-react";
@@ -130,7 +130,7 @@ export default function Home() {
             <img
               src={littleluxe}
               alt="Little Luxe"
-              className="rounded-2xl shadow-xl w-full h-auto max-h-[400px] object-cover"
+              className="rounded-2xl  w-full h-auto max-h-[400px] object-contain"
             />
           </div>
 
