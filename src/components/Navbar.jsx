@@ -133,7 +133,7 @@ export default function Navbar() {
                         onClick={() => setOpen(false)}
                         className="py-2 px-8 text-secondary/80 hover:text-secondary hover:bg-primary/10 transition-colors duration-200 block"
                       >
-                        Little Luxe Brand
+                        Little Luxe 
                       </a>
                       <a
                         href="/products/multi-brand"
