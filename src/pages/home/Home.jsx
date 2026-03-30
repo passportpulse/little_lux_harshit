@@ -8,7 +8,9 @@ import hero from "../../assets/images/hero9.png";
 import hero1 from "../../assets/images/hero8.png";
 import hero3 from "../../assets/images/hero6.png";
 import littleluxe from "../../assets/owner.png";
+import dis from "../../assets/images/dis.png";
 import { Palette, ShieldCheck, Feather } from "lucide-react";
+import { motion } from "framer-motion";
 
 const images = [
   {
@@ -101,21 +103,37 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[80vh] overflow-hidden">
+    {/* Hero Section */}
+<div className="relative w-full h-[80vh] overflow-hidden">
 
-        {images.map((img, index) => (
-          <img
-            key={img.id}
-            src={img.src}
-            alt={img.alt}
-            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${index === current ? "opacity-100" : "opacity-0"
-              }`}
-          />
-        ))}
+  {images.map((img, index) => (
+    <div
+      key={img.id}
+      className={`absolute inset-0 transition-opacity duration-1000 ${
+        index === current ? "opacity-100" : "opacity-0"
+      }`}
+    >
 
-      
+      {/* 🔥 Background Blur (fills screen) */}
+      <img
+        src={img.src}
+        alt=""
+        className="absolute w-full h-full object-cover blur-xl scale-110"
+      />
 
-      </div>
+      {/* ✅ Main Image (no crop) */}
+      <img
+        src={img.src}
+        alt={img.alt}
+        className="relative w-full h-full object-contain"
+      />
+
+    </div>
+  ))}
+
+  {/* Overlay */}
+
+</div>
       {/* STORY */}
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className=" mb-12">
@@ -126,13 +144,48 @@ export default function Home() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <img
-              src={littleluxe}
-              alt="Little Luxe"
-              className="rounded-2xl  w-full h-auto max-h-[400px] object-contain"
-            />
-          </div>
+
+
+<div className="relative overflow-hidden rounded-3xl">
+
+  {/* 🌸 Soft Gradient BG (light & stable) */}
+  <motion.div
+    animate={{
+      background: [
+        "linear-gradient(135deg, #fdfbfb, #ebedee)",
+        "linear-gradient(135deg, #e0c3fc, #f5f7fa)",
+        "linear-gradient(135deg, #fceabb, #f8b500)",
+      ],
+    }}
+    transition={{
+      duration: 12,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="absolute inset-0 z-0 opacity-30"
+  />
+
+  {/* ✨ Glass layer */}
+  <div className="absolute inset-0 bg-white/30 backdrop-blur-sm z-10"></div>
+
+  {/* 🖼️ Image (NO opacity animation) */}
+  <motion.img
+    src={littleluxe}
+    alt="Little Luxe"
+
+    animate={{ y: [0, -8, 0] }}   // only floating
+    transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+
+    whileHover={{ scale: 1.03 }}
+
+    className="relative z-20 rounded-2xl w-full h-auto max-h-[400px] object-contain p-6 shadow-xl"
+  />
+
+</div>
 
         <div className="space-y-6 text-slate-700 leading-relaxed">
 
@@ -521,7 +574,7 @@ export default function Home() {
                 {/* Main Image */}
                 <div className="relative rounded-3xl overflow-hidden ">
                   <img
-                    src="/product/Picture7.png"
+                    src={dis}
                     alt="Artist workspace"
                     className="w-full h-[400px] object-contain"
                   />
