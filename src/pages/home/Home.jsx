@@ -523,7 +523,7 @@ export default function Home() {
                   <img
                     src="/product/Picture7.png"
                     alt="Artist workspace"
-                    className="w-full h-[400px] object-cover"
+                    className="w-full h-[400px] object-contain"
                   />
                   {/* Overlay Gradient */}
                 </div>
