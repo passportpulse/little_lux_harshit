@@ -4,6 +4,7 @@ import { ArrowRight, Star, IndianRupee, Bike, Car, Battery, Zap } from "lucide-r
 import productsData from "../../data/data.json";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import hero from "../../assets/images/hero.png";
 import hero1 from "../../assets/images/hero1.png";
 import hero2 from "../../assets/images/contact-bg.png";
 import hero3 from "../../assets/images/faq-bg.png";
@@ -13,16 +14,21 @@ import littleluxe from "../../assets/product/A+B Panda Backrest Magick Car.png";
 const images = [
   {
     id: 1,
-    src: hero1,
-    alt: "Cycle 1"
+    src: hero,
+    alt: "Hero"
   },
   {
     id: 2,
+    src: hero1,
+    alt: "Hero 1"
+  },
+  {
+    id: 3,
     src: hero2,
     alt: "Cycle 2"
   },
   {
-    id: 3,
+    id: 4,
     src: hero3,
     alt: "Cycle 3"
   }
