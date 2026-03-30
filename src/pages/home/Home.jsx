@@ -102,7 +102,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-[100vh] overflow-hidden">
+      <div className="relative w-full h-[80vh] overflow-hidden">
 
         {images.map((img, index) => (
           <img
@@ -199,7 +199,7 @@ export default function Home() {
                     {product.description}
                   </p>
 
-                  <div className="flex items-center justify-between mb-3">
+                  {/* <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <IndianRupee className="w-4 h-4 text-purple-600" />
                       <span className="text-lg font-bold text-slate-800">{product.price}</span>
@@ -208,7 +208,7 @@ export default function Home() {
                       <IndianRupee className="w-3 h-3 text-slate-400" />
                       <span className="text-sm text-slate-400 line-through">{product.originalPrice}</span>
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* View Details */}
                   <button

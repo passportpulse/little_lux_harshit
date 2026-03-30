@@ -231,7 +231,7 @@ export default function ProductDetail() {
                 onClick={handleBuyNow}
                 className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 rounded-2xl font-bold hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
               >
-                Buy Now
+               Raise Enquiry
               </button>
             </div>
 
