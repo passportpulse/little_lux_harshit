@@ -7,6 +7,7 @@ import FAQ from "../pages/faq/FAQ";
 import Blog from "../pages/blog/Blog";
 import Products from "../pages/products/Products";
 import ProductDetail from "../pages/products/ProductDetail";
+import Distribution from "../pages/distribution/Distribution";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,18 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "products/multi-brand",
+        element: <Products />,
+      },
+      {
+        path: "products/little-luxe",
+        element: <Products />,
+      },
+      {
+        path: "distribution",
+        element: <Distribution />,
       },
       {
         path: "products/:id",

@@ -12,6 +12,7 @@ import {
   Twitter,
   User,
   Phone,
+  Users,
 } from "lucide-react";
 
 /* ================= NAVIGATION ================= */
@@ -41,6 +42,14 @@ export const navigationLinks = [
 
   {
     id: 4,
+    label: "Distribution",
+    path: "/distribution",
+    icon: Users,
+    color: "text-green-400",
+  },
+
+  {
+    id: 5,
     label: "FAQ's",
     path: "/frequently-asked-questions",
     icon: Star,

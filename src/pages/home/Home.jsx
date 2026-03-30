@@ -1,6 +1,6 @@
 import Section from "../../components/layout/Section";
 import Container from "../../components/layout/Container";
-import { ArrowRight, Star, IndianRupee, Bike, Car, Battery, Zap } from "lucide-react";
+import { ArrowRight, Star, IndianRupee, Bike, Car, Battery, Zap, MapPin, Phone, Mail, Users } from "lucide-react";
 import productsData from "../../data/data.json";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -9,7 +9,7 @@ import hero1 from "../../assets/images/hero1.png";
 import hero2 from "../../assets/images/contact-bg.png";
 import hero3 from "../../assets/images/faq-bg.png";
 import littleluxe from "../../assets/product/A+B Panda Backrest Magick Car.png";
-
+import { Palette, ShieldCheck, Feather } from "lucide-react";
 
 const images = [
   {
@@ -59,8 +59,8 @@ export default function Home() {
   const ProductCard = ({ product }) => (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
       <div className="relative h-40 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-        <img 
-          src={product.images?.[0]} 
+        <img
+          src={product.images?.[0]}
           alt={product.name}
           className="w-full h-full object-contain p-4"
         />
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20"></div>
 
       </div>
-    {/* STORY */}
+      {/* STORY */}
       <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
 
         <div>
@@ -166,10 +166,10 @@ export default function Home() {
         </div>
       </div>
 
-        <section className="py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text- mb-12">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Little Luxe Collection</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Little Luxe Khusi Bachho Ki ❤️</h2>
             <p className="text-slate-600 text-lg max-w-2xl ">
               Premium quality products designed for comfort and style
             </p>
@@ -182,9 +182,9 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer"
                 onClick={() => navigate(`/products/${product.id}`)}
               >
-                {/* Image */}
-                <div className="relative h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                  <img 
+
+                <div className="relative h-98 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                  <img
                     src={product.images?.[0]}
                     alt={product.name}
                     className="w-full h-full object-contain p-4 group-hover:scale-110 transition duration-300"
@@ -193,8 +193,8 @@ export default function Home() {
                     -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
                   </div>
                 </div>
-                
-                {/* Content */}
+
+
                 <div className="p-4">
                   <h3 className="font-bold text-slate-800 mb-2 text-sm group-hover:text-purple-600 transition-colors">
                     {product.name}
@@ -202,7 +202,7 @@ export default function Home() {
                   <p className="text-xs text-slate-500 mb-3 line-clamp-2">
                     {product.description}
                   </p>
-                  
+
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <IndianRupee className="w-4 h-4 text-purple-600" />
@@ -215,9 +215,9 @@ export default function Home() {
                   </div>
 
                   {/* View Details */}
-                  <button 
+                  <button
                     onClick={() => navigate(`/products/${product.id}`)}
-                    className="w-full py-2 rounded-lg text-sm font-medium transition" 
+                    className="w-full py-2 rounded-lg text-sm font-medium transition"
                     style={{ backgroundColor: '#fcd8be' }}
                   >
                     View Details
@@ -227,7 +227,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Mobile Button */}
+
           <div className="text-center mt-8 lg:hidden">
             <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
               View All Little Luxe Products
@@ -236,13 +236,11 @@ export default function Home() {
         </div>
       </section>
       {/* Featured Tri Cycles */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Top Row */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
 
-            {/* Heading */}
             <div>
               <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
                 Featured Tri Cycles
@@ -253,14 +251,12 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Desktop Button */}
             <button className="hidden lg:inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition mt-4 lg:mt-0" style={{ backgroundColor: '#fcd8be' }}>
               View All <ArrowRight size={18} />
             </button>
 
           </div>
 
-          {/* Product Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {featuredTriCycles.map((product) => (
@@ -269,7 +265,6 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-4 group"
               >
 
-                {/* Image */}
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src={product.images?.[0]}
@@ -278,7 +273,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="mt-4">
 
                   <h3 className="font-semibold text-slate-800">
@@ -293,7 +287,6 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
@@ -309,7 +302,6 @@ export default function Home() {
 
           </div>
 
-          {/* Mobile Button */}
           <div className="text-center mt-10 lg:hidden">
             <button className="inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition" style={{ backgroundColor: '#fcd8be' }}>
               View All <ArrowRight size={18} />
@@ -317,16 +309,14 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
-      {/* Featured Ride-Ons */}
-      <section className="py-16 bg-gradient-to-b from-yellow-50 to-orange-50">
+      {/* <section className="py-16 bg-gradient-to-b from-yellow-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Top Row */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
 
-            {/* Heading */}
+         
             <div>
               <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
                 Featured Ride-Ons
@@ -337,14 +327,14 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Desktop Button */}
+           
             <button className="hidden lg:inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition mt-4 lg:mt-0" style={{ backgroundColor: '#fcd8be' }}>
               View All Ride-Ons <ArrowRight size={18} />
             </button>
 
           </div>
 
-          {/* Product Grid */}
+         
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {featuredRideOns.map((product) => (
@@ -353,7 +343,7 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-4 group"
               >
 
-                {/* Image */}
+             
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src={product.images?.[0]}
@@ -362,7 +352,7 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
+            
                 <div className="mt-4">
 
                   <h3 className="font-semibold text-slate-800">
@@ -377,7 +367,6 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
@@ -393,7 +382,7 @@ export default function Home() {
 
           </div>
 
-          {/* Mobile Button */}
+          
           <div className="text-center mt-10 lg:hidden">
             <button className="inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition" style={{ backgroundColor: '#fcd8be' }}>
               View All Ride-Ons <ArrowRight size={18} />
@@ -401,16 +390,14 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
-
-      {/* Featured Battery Bikes */}
+      </section> */}
+      {/* 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Top Row */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
 
-            {/* Heading */}
+         
             <div>
               <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
                 Featured Battery Bikes
@@ -421,14 +408,14 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Desktop Button */}
+           
             <button className="hidden lg:inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition mt-4 lg:mt-0" style={{ backgroundColor: '#fcd8be' }}>
               View All Battery Bikes <ArrowRight size={18} />
             </button>
 
           </div>
 
-          {/* Product Grid */}
+         
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {featuredBatteryBikes.map((product) => (
@@ -437,7 +424,7 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-4 group"
               >
 
-                {/* Image */}
+             
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src={product.images?.[0]}
@@ -446,7 +433,7 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
+            
                 <div className="mt-4">
 
                   <h3 className="font-semibold text-slate-800">
@@ -461,7 +448,6 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
@@ -477,7 +463,7 @@ export default function Home() {
 
           </div>
 
-          {/* Mobile Button */}
+          
           <div className="text-center mt-10 lg:hidden">
             <button className="inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition" style={{ backgroundColor: '#fcd8be' }}>
               View All Battery Bikes <ArrowRight size={18} />
@@ -485,75 +471,73 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
-  <section className="relative bg-[#faf9f7] py-24 overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-[#8B5CF6]/20 blur-3xl rounded-full -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-rose-200/30 blur-3xl rounded-full -z-10"></div>
+      </section> */}
+      <section className="relative bg-[#faf9f7] py-24 overflow-hidden">
+        {/* Background Glow */}
+        <div className="absolute top-10 left-10 w-72 h-72 bg-[#8B5CF6]/20 blur-3xl rounded-full -z-10"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-rose-200/30 blur-3xl rounded-full -z-10"></div>
 
-      
 
-      {/* Subscribe Section */}
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="relative grid lg:grid-cols-2 gap-12 bg-white rounded-3xl shadow-lg overflow-hidden">
-          {/* Left: Offer Content */}
-          <div className="p-10 md:p-16 flex flex-col justify-center">
-            <h2
-             
-              className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6 leading-tight"
-            >
-              Sign up & unlock 10% off your first order
-            </h2>
 
-            <p className="text-zinc-600 text-lg mb-10 max-w-md leading-relaxed">
-              Discover exclusive art pieces, curator insights, and special previews tailored for collectors and creators alike.
-            </p>
+        {/* Subscribe Section */}
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <div className="relative grid lg:grid-cols-2 gap-12 bg-white rounded-3xl shadow-lg overflow-hidden">
+            {/* Left: Offer Content */}
+            <div className="p-10 md:p-16 flex flex-col justify-center">
+              <h2
 
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-5 py-3 rounded-full border border-zinc-300 focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 outline-none transition"
-              />
-              <button
-                type="submit"
-                className="px-7 py-3 rounded-full bg-[#8B5CF6] text-white font-semibold flex items-center justify-center gap-2 hover:bg-[#7C3AED] transition"
+                className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6 leading-tight"
               >
-                Get offer <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
+                Sign up & unlock 10% off your first order
+              </h2>
 
-          {/* Right: Modern Visual */}
-          <div className="relative bg-gradient-to-br from-[#F5F3FF] via-[#FAE8FF] to-[#EEF2FF] flex items-center justify-center p-8">
-            <div
-            
-              className="relative w-full max-w-md"
-            >
-              {/* Main Image */}
-              <div className="relative rounded-3xl overflow-hidden ">
-                <img
-                  src="/product/Picture7.png"
-                  alt="Artist workspace"
-                  className="w-full h-[400px] object-cover"
+              <p className="text-zinc-600 text-lg mb-10 max-w-md leading-relaxed">
+                Discover exclusive art pieces, curator insights, and special previews tailored for collectors and creators alike.
+              </p>
+
+              <form className="flex flex-col sm:flex-row gap-4 max-w-lg">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-5 py-3 rounded-full border border-zinc-300 focus:border-[#8B5CF6] focus:ring-2 focus:ring-[#8B5CF6]/30 outline-none transition"
                 />
-                {/* Overlay Gradient */}
-              </div>
+                <button
+                  type="submit"
+                  className="px-7 py-3 rounded-full bg-[#8B5CF6] text-white font-semibold flex items-center justify-center gap-2 hover:bg-[#7C3AED] transition"
+                >
+                  Get offer <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
 
-             
+            {/* Right: Modern Visual */}
+            <div className="relative bg-gradient-to-br from-[#F5F3FF] via-[#FAE8FF] to-[#EEF2FF] flex items-center justify-center p-8">
+              <div
+
+                className="relative w-full max-w-md"
+              >
+                {/* Main Image */}
+                <div className="relative rounded-3xl overflow-hidden ">
+                  <img
+                    src="/product/Picture7.png"
+                    alt="Artist workspace"
+                    className="w-full h-[400px] object-cover"
+                  />
+                  {/* Overlay Gradient */}
+                </div>
+
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-      {/* Featured Scooty */}
-      <section className="py-16 bg-gradient-to-b from-pink-50 to-purple-50">
+      </section>
+      {/* <section className="py-16 bg-gradient-to-b from-pink-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Top Row */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
 
-            {/* Heading */}
+         
             <div>
               <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
                 Featured Scooty
@@ -564,14 +548,14 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Desktop Button */}
+           
             <button className="hidden lg:inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition mt-4 lg:mt-0" style={{ backgroundColor: '#fcd8be' }}>
               View All Scooty <ArrowRight size={18} />
             </button>
 
           </div>
 
-          {/* Product Grid */}
+         
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {featuredScooty.map((product) => (
@@ -580,7 +564,7 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-4 group"
               >
 
-                {/* Image */}
+             
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src={product.images?.[0]}
@@ -589,7 +573,7 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
+            
                 <div className="mt-4">
 
                   <h3 className="font-semibold text-slate-800">
@@ -604,7 +588,6 @@ export default function Home() {
                     ₹{product.price}
                   </p>
 
-                  {/*Buy Now */}
                   <button 
                     onClick={() => navigate(`/products/${product.id}`)}
                     className="mt-3 w-full py-2 rounded-lg text-sm font-medium transition" 
@@ -620,7 +603,7 @@ export default function Home() {
 
           </div>
 
-          {/* Mobile Button */}
+          
           <div className="text-center mt-10 lg:hidden">
             <button className="inline-flex items-center gap-2 hover:text-white px-6 py-3 rounded-full font-semibold transition" style={{ backgroundColor: '#fcd8be' }}>
               View All Scooty <ArrowRight size={18} />
@@ -628,79 +611,190 @@ export default function Home() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
-      {/* Features Section */}
-      <section className="py-16 bg-white">
+      {/* Distribution Section */}
+      <section className="py-24 bg-gradient-to-br from-orange-50 via-yellow-50 to-green-50">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Heading */}
-          <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-slate-800 flex items-center justify-center gap-2">
-              Why Kids Love Our Cycles
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+              Grow With Our <span className="text-orange-500">Distribution Network</span>
             </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+              Join hands with us to deliver high-quality baby rides and toys across India.
+              We empower our distributors with strong brand support, fast logistics,
+              and profitable opportunities.
+            </p>
           </div>
 
-          {/* Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Content Grid */}
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
 
-            {/* Card 1 */}
-            <div className="bg-purple-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition text-center">
-
-              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-purple-100 text-2xl mx-auto mb-4">
-                🎨
+            {/* Image Side */}
+            <div className="relative">
+              <img
+                src="/littleProduct/product7.png"
+                alt="Distribution Network"
+                className="rounded-3xl  w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                <p className="text-orange-500 font-bold text-lg">500+ Partners</p>
+                <p className="text-sm text-slate-600">Across India</p>
               </div>
-
-              <h3 className="font-semibold text-lg text-slate-800">
-                Cute Colors
-              </h3>
-
-              <p className="text-sm text-slate-600 mt-2">
-                Bright and playful shades kids absolutely adore.
-              </p>
-
             </div>
 
-
-            {/* Card 2 */}
-            <div className="bg-yellow-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition text-center">
-
-              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-yellow-100 text-2xl mx-auto mb-4">
-                🛡️
-              </div>
-
-              <h3 className="font-semibold text-lg text-slate-800">
-                Super Safe
+            {/* Text Content */}
+            <div>
+              <h3 className="text-2xl font-semibold text-slate-800 mb-4">
+                Why Partner With Us?
               </h3>
 
-              <p className="text-sm text-slate-600 mt-2">
-                Built with strong frames and smooth braking system.
-              </p>
-
+              <ul className="space-y-4 text-slate-600">
+                <li>✅ Wide range of premium baby products with high demand</li>
+                <li>✅ Strong brand reputation and marketing support</li>
+                <li>✅ Fast delivery & reliable supply chain</li>
+                <li>✅ Attractive margins and growth opportunities</li>
+                <li>✅ Dedicated partner support team</li>
+              </ul>
             </div>
+          </div>
 
+          {/* Features Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
 
-            {/* Card 3 */}
-            <div className="bg-blue-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition text-center">
-
-              <div className="w-14 h-14 flex items-center justify-center rounded-full bg-blue-100 text-2xl mx-auto mb-4">
-                🌟
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-orange-600" />
               </div>
-
-              <h3 className="font-semibold text-lg text-slate-800">
-                Lightweight
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">
+                500+ Trusted Partners
               </h3>
-
-              <p className="text-sm text-slate-600 mt-2">
-                Easy to ride, handle and carry anywhere.
+              <p className="text-slate-600">
+                A rapidly growing network of distributors across the country.
               </p>
-
             </div>
 
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">
+                Pan India Reach
+              </h3>
+              <p className="text-slate-600">
+                Covering major cities, towns, and emerging markets nationwide.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition text-center">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-3">
+                Dedicated Support
+              </h3>
+              <p className="text-slate-600">
+                Quick assistance, smooth onboarding, and ongoing partner guidance.
+              </p>
+            </div>
+
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <button
+              onClick={() => navigate('/distribution')}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-10 py-4 rounded-full font-semibold text-lg hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Become a Distributor
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
 
         </div>
       </section>
+
+      {/* Features Section */}
+
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+        Why Kids Love Our Cycles
+      </h2>
+      <p className="text-slate-600 mt-3 max-w-2xl mx-auto">
+        Designed with care, safety, and fun in mind — our cycles bring joy, comfort, 
+        and confidence to every child’s riding experience.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* Card 1 */}
+      <div className="group bg-purple-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+
+        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-purple-100 mx-auto mb-5 group-hover:scale-110 transition">
+          <Palette className="w-8 h-8 text-purple-600" />
+        </div>
+
+        <h3 className="font-semibold text-xl text-slate-800">
+          Attractive & Fun Designs
+        </h3>
+
+        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+          Eye-catching colors and playful designs that instantly grab kids’ attention 
+          and make every ride exciting.
+        </p>
+
+      </div>
+
+
+      {/* Card 2 */}
+      <div className="group bg-yellow-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+
+        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mx-auto mb-5 group-hover:scale-110 transition">
+          <ShieldCheck className="w-8 h-8 text-yellow-600" />
+        </div>
+
+        <h3 className="font-semibold text-xl text-slate-800">
+          Advanced Safety Features
+        </h3>
+
+        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+          Built with durable frames, stable balance, and smooth braking systems 
+          to ensure a safe and worry-free ride.
+        </p>
+
+      </div>
+
+
+      {/* Card 3 */}
+      <div className="group bg-blue-50 p-8 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 text-center hover:-translate-y-2">
+
+        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mx-auto mb-5 group-hover:scale-110 transition">
+          <Feather className="w-8 h-8 text-blue-600" />
+        </div>
+
+        <h3 className="font-semibold text-xl text-slate-800">
+          Lightweight & Easy Handling
+        </h3>
+
+        <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+          Designed to be lightweight so kids can ride, control, and carry 
+          their cycles with ease and confidence.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 
     </>
