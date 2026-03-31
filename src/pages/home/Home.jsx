@@ -102,8 +102,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-    {/* Hero Section */}
+   
+{/* Hero Section */}
 <div className="relative w-full h-[80vh] overflow-hidden">
 
   {images.map((img, index) => (
@@ -113,25 +113,13 @@ export default function Home() {
         index === current ? "opacity-100" : "opacity-0"
       }`}
     >
-
-      {/* 🔥 Background Blur (fills screen) */}
-      <img
-        src={img.src}
-        alt=""
-        className="absolute w-full h-full object-cover blur-xl scale-110"
-      />
-
-      {/* ✅ Main Image (no crop) */}
       <img
         src={img.src}
         alt={img.alt}
-        className="relative w-full h-full object-contain"
+        className="w-full h-full object-cover"
       />
-
     </div>
   ))}
-
-  {/* Overlay */}
 
 </div>
       {/* STORY */}
@@ -142,83 +130,83 @@ export default function Home() {
             A legacy of love, care, and childhood joy spanning over five decades
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
 
-<div className="relative overflow-hidden rounded-3xl">
+          <div className="relative overflow-hidden rounded-3xl">
 
-  {/* 🌸 Soft Gradient BG (light & stable) */}
-  <motion.div
-    animate={{
-      background: [
-        "linear-gradient(135deg, #fdfbfb, #ebedee)",
-        "linear-gradient(135deg, #e0c3fc, #f5f7fa)",
-        "linear-gradient(135deg, #fceabb, #f8b500)",
-      ],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="absolute inset-0 z-0 opacity-30"
-  />
+            {/* 🌸 Soft Gradient BG (light & stable) */}
+            <motion.div
+              animate={{
+                background: [
+                  "linear-gradient(135deg, #fdfbfb, #ebedee)",
+                  "linear-gradient(135deg, #e0c3fc, #f5f7fa)",
+                  "linear-gradient(135deg, #fceabb, #f8b500)",
+                ],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 z-0 opacity-30"
+            />
 
-  {/* ✨ Glass layer */}
-  <div className="absolute inset-0 bg-white/30 backdrop-blur-sm z-10"></div>
+            {/* ✨ Glass layer */}
+            <div className="absolute inset-0 bg-white/30 backdrop-blur-sm z-10"></div>
 
-  {/* 🖼️ Image (NO opacity animation) */}
-  <motion.img
-    src={littleluxe}
-    alt="Little Luxe"
+            {/* 🖼️ Image (NO opacity animation) */}
+            <motion.img
+              src={littleluxe}
+              alt="Little Luxe"
 
-    animate={{ y: [0, -8, 0] }}   // only floating
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
+              animate={{ y: [0, -8, 0] }}   // only floating
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
 
-    whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.03 }}
 
-    className="relative z-20 rounded-2xl w-full h-auto max-h-[400px] object-contain p-6 shadow-xl"
-  />
+              className="relative z-20 rounded-2xl w-full h-auto max-h-[400px] object-contain p-6 shadow-xl"
+            />
 
-</div>
+          </div>
 
-        <div className="space-y-6 text-slate-700 leading-relaxed">
+          <div className="space-y-6 text-slate-700 leading-relaxed">
 
-          <p>
-            I’m <strong>Ranabir Das</strong>, proud owner of a legacy business
-            rooted in love, care, and childhood joy.
-          </p>
+            <p>
+              I’m <strong>Ranabir Das</strong>, proud owner of a legacy business
+              rooted in love, care, and childhood joy.
+            </p>
 
-          <p>
-            Our journey began in <strong>1969</strong>, when my late father
-            <strong> Shri Sambhunath Das </strong>
-            started a baby rides wholesale business in West Bengal.
-          </p>
+            <p>
+              Our journey began in <strong>1969</strong>, when my late father
+              <strong> Shri Sambhunath Das </strong>
+              started a baby rides wholesale business in West Bengal.
+            </p>
 
-          <p>
-            In <strong>1993</strong>, after completing my graduation,
-            I took the responsibility of growing this legacy.
-          </p>
+            <p>
+              In <strong>1993</strong>, after completing my graduation,
+              I took the responsibility of growing this legacy.
+            </p>
 
-          <p>
-            With the belief that nothing is more beautiful than
-            the smile of a child, we launched our brand
-            <strong> Little Luxe – Khushi Bachoki </strong>.
-          </p>
+            <p>
+              With the belief that nothing is more beautiful than
+              the smile of a child, we launched our brand
+              <strong> Little Luxe – Khushi Bachoki </strong>.
+            </p>
 
-          <p>
-            In <strong>2024</strong>, we entered manufacturing in
-            collaboration with <strong>Baby Ride On</strong>,
-            bringing innovative and safe ride-on toys for children.
-          </p>
+            <p>
+              In <strong>2024</strong>, we entered manufacturing in
+              collaboration with <strong>Baby Ride On</strong>,
+              bringing innovative and safe ride-on toys for children.
+            </p>
 
+          </div>
         </div>
-      </div>
       </div>
 
       <section className="py-16 bg-white">
