@@ -227,9 +227,7 @@ export default function Footer() {
 
           <div className="text-center md:text-right">
             <p className="text-[11px] text-secondary uppercase tracking-widest">
-              © {currentYear} LITTLE LUXE • CRAFTED WITH{" "}
-              <Heart className="inline-block align-middle w-3 h-3 fill-secondary text-secondary animate-pulse -mt-0.5" />{" "}
-              FOR BABIES
+              © {currentYear} LITTLE LUXE 
             </p>
           </div>
         </div>
