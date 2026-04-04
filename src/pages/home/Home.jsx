@@ -104,19 +104,19 @@ export default function Home() {
     <>
    
 {/* Hero Section */}
-<div className="relative w-full h-[80vh] overflow-hidden">
+<div className="relative w-full aspect-[16/9] md:h-[80vh] overflow-hidden">
 
   {images.map((img, index) => (
     <div
       key={img.id}
-      className={`absolute inset-0 transition-opacity duration-1000 ${
-        index === current ? "opacity-100" : "opacity-0"
+      className={`absolute inset-0 transition-opacity duration-700 ${
+        index === current ? "opacity-100 z-10" : "opacity-0 z-0"
       }`}
     >
       <img
         src={img.src}
         alt={img.alt}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain md:object-cover"
       />
     </div>
   ))}
