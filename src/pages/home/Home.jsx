@@ -104,7 +104,7 @@ export default function Home() {
     <>
    
 {/* Hero Section */}
-<div className="relative w-full aspect-[4/5] sm:aspect-[16/9] md:h-[80vh] overflow-hidden">
+<div className="relative h-[75vh] md:h-[80vh] overflow-hidden">
 
   {images.map((img, index) => (
     <div
@@ -116,7 +116,7 @@ export default function Home() {
       <img
         src={img.src}
         alt={img.alt}
-        className="w-full h-full object-repeat"
+        className="w-full h-full object-fit md:object-cover"
       />
     </div>
   ))}
