@@ -171,12 +171,12 @@ export default function ProductDetail() {
                   </div>
                   <span className="text-sm text-slate-600 font-medium">(4.0)</span>
                 </div>
-                <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                {/* <span className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
                   -{discount}% OFF
-                </span>
+                </span> */}
               </div>
 
-              <div className="flex items-center gap-6">
+              {/* <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <IndianRupee className="w-6 h-6 text-blue-600" />
                   <span className="text-4xl font-bold text-slate-900">{product.price}</span>
@@ -185,7 +185,7 @@ export default function ProductDetail() {
                   <IndianRupee className="w-5 h-5 text-slate-400" />
                   <span className="text-xl text-slate-400 line-through">{product.originalPrice}</span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Description */}

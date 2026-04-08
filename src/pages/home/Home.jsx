@@ -60,78 +60,78 @@ export default function Home() {
   }, []);
 
   // Get featured products from different categories
-  const featuredTriCycles = products
-    .filter((p) => p.category === "Tri Cycle")
-    .slice(0, 4);
-  const featuredRideOns = products
-    .filter((p) => p.category === "Ride-On")
-    .slice(0, 4);
-  const featuredBatteryBikes = products
-    .filter((p) => p.category === "Battery Bike")
-    .slice(0, 4);
-  const featuredScooty = products
-    .filter((p) => p.category === "Scooty")
-    .slice(0, 4);
+  // const featuredTriCycles = products
+  //   .filter((p) => p.category === "Tri Cycle")
+  //   .slice(0, 4);
+  // const featuredRideOns = products
+  //   .filter((p) => p.category === "Ride-On")
+  //   .slice(0, 4);
+  // const featuredBatteryBikes = products
+  //   .filter((p) => p.category === "Battery Bike")
+  //   .slice(0, 4);
+  // const featuredScooty = products
+  //   .filter((p) => p.category === "Scooty")
+  //   .slice(0, 4);
   const featuredLittleLuxe = products
     .filter((p) => p.category === "Little Luxe")
-    .slice(0, 8);
+    .slice(0, 10);
 
-  const ProductCard = ({ product }) => (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
-      <div className="relative h-40 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-        <img
-          src={product.images?.[0]}
-          alt={product.name}
-          className="w-full h-full object-contain p-4"
-        />
-        <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-          -
-          {Math.round(
-            ((product.originalPrice - product.price) / product.originalPrice) *
-              100,
-          )}
-          %
-        </div>
-      </div>
-      <div className="p-4">
-        <h3 className="font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors text-sm">
-          {product.name}
-        </h3>
-        <div className="flex items-center gap-1 mb-2">
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-3 h-3 ${
-                  i < 4 ? "fill-yellow-400 text-yellow-400" : "text-slate-300"
-                }`}
-              />
-            ))}
-          </div>
-          <span className="text-xs text-slate-500">(4.0)</span>
-        </div>
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <div className="flex items-center gap-1">
-              <IndianRupee className="w-3 h-3 text-purple-500" />
-              <span className="text-lg font-bold text-slate-800">
-                {product.price}
-              </span>
-            </div>
-            <div className="flex items-center gap-1">
-              <IndianRupee className="w-2 h-2 text-slate-400" />
-              <span className="text-xs text-slate-400 line-through">
-                {product.originalPrice}
-              </span>
-            </div>
-          </div>
-        </div>
-        <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
-          Add to Cart
-        </button>
-      </div>
-    </div>
-  );
+  // const ProductCard = ({ product }) => (
+  //   <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+  //     <div className="relative h-40 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+  //       <img
+  //         src={product.images?.[0]}
+  //         alt={product.name}
+  //         className="w-full h-full object-contain p-4"
+  //       />
+  //       <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+  //         -
+  //         {Math.round(
+  //           ((product.originalPrice - product.price) / product.originalPrice) *
+  //             100,
+  //         )}
+  //         %
+  //       </div>
+  //     </div>
+  //     <div className="p-4">
+  //       <h3 className="font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors text-sm">
+  //         {product.name}
+  //       </h3>
+  //       <div className="flex items-center gap-1 mb-2">
+  //         <div className="flex">
+  //           {[...Array(5)].map((_, i) => (
+  //             <Star
+  //               key={i}
+  //               className={`w-3 h-3 ${
+  //                 i < 4 ? "fill-yellow-400 text-yellow-400" : "text-slate-300"
+  //               }`}
+  //             />
+  //           ))}
+  //         </div>
+  //         <span className="text-xs text-slate-500">(4.0)</span>
+  //       </div>
+  //       <div className="flex items-center justify-between mb-3">
+  //         <div>
+  //           <div className="flex items-center gap-1">
+  //             <IndianRupee className="w-3 h-3 text-purple-500" />
+  //             <span className="text-lg font-bold text-slate-800">
+  //               {product.price}
+  //             </span>
+  //           </div>
+  //           <div className="flex items-center gap-1">
+  //             <IndianRupee className="w-2 h-2 text-slate-400" />
+  //             <span className="text-xs text-slate-400 line-through">
+  //               {product.originalPrice}
+  //             </span>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
+  //         Add to Cart
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <>
@@ -277,7 +277,7 @@ export default function Home() {
                     alt={product.name}
                     className="w-full h-full object-contain p-4 group-hover:scale-110 transition duration-300"
                   />
-                  <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                  {/* <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                     -
                     {Math.round(
                       ((product.originalPrice - product.price) /
@@ -285,7 +285,7 @@ export default function Home() {
                         100,
                     )}
                     %
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="p-4">
