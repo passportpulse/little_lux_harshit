@@ -72,7 +72,7 @@ const faqData = [
     id: 12,
     question: "What payment methods do you accept?",
     answer:
-      "We accept cash, debit/credit cards, UPI, net banking, and also offer EMI options for higher-value products. All online payments are secure and encrypted.",
+      "We accept Cash, UPI (GPay, PhonePe, Paytm), and Net Banking. Please note that we do not accept Credit Card payments or offer EMI options at this time. All digital transactions are secure and encrypted.",
   },
 ];
 
