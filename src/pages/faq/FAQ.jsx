@@ -54,7 +54,7 @@ const faqData = [
     id: 9,
     question: "Do you offer assembly services?",
     answer:
-      "Yes, we provide assembly services for larger products like battery-operated cars and bicycles. Our trained technicians can assemble the product at your home for a nominal fee.",
+      "Currently, we offer pre-assembled products for in-store pickups only. If you purchase from our shop, our team can provide a fully fitted tricycle. For all other orders, assembly must be handled by the client at their location. Please note that we do not provide door-to-door technician services at this time.",
   },
   {
     id: 10,
