@@ -136,7 +136,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative h-[25vh] md:h-[80vh] overflow-hidden">
+      <div className="relative h-[40vh] md:h-[80vh] overflow-hidden">
         {images.map((img, index) => (
           <div
             key={img.id}
@@ -147,29 +147,28 @@ export default function Home() {
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full h-full object-cover" // object-cover looks better than object-fit
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
       </div>
-      {/* Mobile Form Section - Only visible on small screens */}
-      <div className="md:hidden relative py-8 px-6 overflow-hidden">
+
+      {/* Mobile Form Section */}
+      <div className="md:hidden relative py-8 px-6 overflow-visible">
+        {" "}
+        {/* Change overflow-hidden to overflow-visible */}
         {/* The Prominent Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src={images[current].src}
-            className="w-full h-full object-cover blur-[1px] opacity-60 scale-105 transition-all duration-700"
+            className="w-full h-full object-cover blur-[1px] opacity-60 scale-105"
             alt="background-prominent"
           />
-          {/* Subtle gradient overlay to ensure text/form readability */}
-          <div className="absolute inset-0 bg-white/50"></div>
         </div>
-
-        {/* Form Content */}
-        <div className="relative z-10 flex flex-col items-center">
-          <p className="text-slate-800 font-semibold mb-6 text-center bg-white/40 backdrop-blur-md px-4 py-1 rounded-full">
-            Let us help you find the perfect ride
-          </p>
+        {/* Form Content - This is where the magic happens */}
+        <div className="relative z-20 flex flex-col items-center mt-[-100px]">
+          {" "}
+          {/* Negative margin pulls it up */}
           <HeroContactForm />
         </div>
       </div>

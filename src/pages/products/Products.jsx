@@ -3,7 +3,14 @@ import Container from "../../components/layout/Container";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import productsData from "../../data/data.json";
-import { Search, Filter, Heart, ShoppingCart, Star, IndianRupee } from "lucide-react";
+import {
+  Search,
+  Filter,
+  Heart,
+  ShoppingCart,
+  Star,
+  IndianRupee,
+} from "lucide-react";
 
 export default function Products() {
   const navigate = useNavigate();
@@ -17,12 +24,12 @@ export default function Products() {
   // Determine brand filter from URL
   const getBrandFilter = () => {
     const path = location.pathname;
-    if (path.includes('/multi-brand')) {
-      return 'multi-brand';
-    } else if (path.includes('/little-luxe')) {
-      return 'little-luxe';
+    if (path.includes("/multi-brand")) {
+      return "multi-brand";
+    } else if (path.includes("/little-luxe")) {
+      return "little-luxe";
     }
-    return 'all';
+    return "all";
   };
 
   const brandFilter = getBrandFilter();
@@ -30,28 +37,37 @@ export default function Products() {
   // Get unique categories based on brand filter
   const getFilteredCategories = () => {
     let filteredProducts = products;
-    if (brandFilter === 'multi-brand') {
-      filteredProducts = products.filter(product => product.category !== "Little Luxe");
-    } else if (brandFilter === 'little-luxe') {
-      filteredProducts = products.filter(product => product.category === "Little Luxe");
+    if (brandFilter === "multi-brand") {
+      filteredProducts = products.filter(
+        (product) => product.category !== "Little Luxe",
+      );
+    } else if (brandFilter === "little-luxe") {
+      filteredProducts = products.filter(
+        (product) => product.category === "Little Luxe",
+      );
     }
-    return ["All", ...new Set(filteredProducts.map(product => product.category))];
+    return [
+      "All",
+      ...new Set(filteredProducts.map((product) => product.category)),
+    ];
   };
 
   const categories = getFilteredCategories();
 
   // Filter products
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
 
     // Brand filtering logic
     let matchesBrand = true;
-    if (brandFilter === 'multi-brand') {
+    if (brandFilter === "multi-brand") {
       // Show all products except Little Luxe category
       matchesBrand = product.category !== "Little Luxe";
-    } else if (brandFilter === 'little-luxe') {
+    } else if (brandFilter === "little-luxe") {
       // Show only Little Luxe category products
       matchesBrand = product.category === "Little Luxe";
     }
@@ -78,13 +94,12 @@ export default function Products() {
       {/* Hero */}
       <section className="relative bg-gradient-to-b from-orange-50 via-yellow-50 to-green-50 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 leading-tight">
-            {brandFilter === 'little-luxe' ? (
+            {brandFilter === "little-luxe" ? (
               <>
                 <span className="text-orange-500">Little Luxe</span> Products
               </>
-            ) : brandFilter === 'multi-brand' ? (
+            ) : brandFilter === "multi-brand" ? (
               <>
                 <span className="text-orange-500">Multi Brand</span> Products
               </>
@@ -96,12 +111,11 @@ export default function Products() {
           </h1>
 
           <p className="mt-6 text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">
-            {brandFilter === 'little-luxe'
+            {brandFilter === "little-luxe"
               ? "Premium Little Luxe Baby Rides & Toys designed for safety, fun, and joyful childhood moments"
-              : brandFilter === 'multi-brand'
+              : brandFilter === "multi-brand"
                 ? "Wide range of Multi Brand Baby Rides & Toys from various trusted manufacturers"
-                : "Premium Baby Rides & Toys designed for safety, fun, and joyful childhood moments"
-            }
+                : "Premium Baby Rides & Toys designed for safety, fun, and joyful childhood moments"}
           </p>
 
           {/* Buttons */}
@@ -120,14 +134,12 @@ export default function Products() {
               Contact Us
             </a>
           </div>
-
         </div>
       </section>
 
       {/* Filters */}
       <div className="bg-white border-b border-gray-200 py-6 px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
-
           {/* Left - Search */}
           <div className="relative w-full lg:max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
@@ -142,7 +154,6 @@ export default function Products() {
 
           {/* Right - Category + Sort */}
           <div className="flex items-center gap-4 w-full lg:w-auto">
-
             {/* Category Dropdown */}
             <select
               value={selectedCategory}
@@ -166,35 +177,39 @@ export default function Products() {
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
             </select>
-
           </div>
-
         </div>
       </div>
 
       {/* Products Grid */}
       <section className="bg-slate-50 py-16 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-
-
-
           {/* Products */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
             {sortedProducts.map((product) => (
               <div
                 key={product.id}
                 onClick={() => navigate(`/products/${product.id}`)}
                 className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden group cursor-pointer"
               >
-
                 {/* Image */}
                 <div className="relative h-98 bg-gradient-to-br from-orange-100 to-yellow-100 flex items-center justify-center">
-
                   {/* Discount */}
-                  <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                    -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-                  </span>
+
+                  {/* Only show this block if category is NOT Little Luxe */}
+                  {product.category !== "Little Luxe" && (
+                    <>
+                      <span className="absolute top-3 right-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                        -
+                        {Math.round(
+                          ((product.originalPrice - product.price) /
+                            product.originalPrice) *
+                            100,
+                        )}
+                        %
+                      </span>
+                    </>
+                  )}
 
                   {/* Multiple Images Indicator */}
                   {product.images && product.images.length > 1 && (
@@ -211,7 +226,6 @@ export default function Products() {
 
                   {/* Hover Buttons */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-3 transition">
-
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -233,14 +247,11 @@ export default function Products() {
                     >
                       <ShoppingCart className="w-4 h-4 text-orange-500" />
                     </button>
-
                   </div>
-
                 </div>
 
                 {/* Content */}
                 <div className="p-5">
-
                   {/* Category */}
                   <span className="inline-block mb-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">
                     {product.category}
@@ -261,28 +272,39 @@ export default function Products() {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${i < 4 ? "fill-yellow-400 text-yellow-400" : "text-slate-300"
-                          }`}
+                        className={`w-4 h-4 ${
+                          i < 4
+                            ? "fill-yellow-400 text-yellow-400"
+                            : "text-slate-300"
+                        }`}
                       />
                     ))}
                     <span className="text-xs text-slate-500 ml-1">(4.0)</span>
                   </div>
 
                   {/* Price */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div>
+                    {/* Only show this block if category is NOT Little Luxe */}
+                    {product.category !== "Little Luxe" && (
+                      <>
+                        <div className="flex items-center gap-1 text-xl font-bold text-slate-800">
+                          <IndianRupee className="w-4 h-4 text-orange-500" />
+                          {product.price}
+                        </div>
 
-                    <div>
-                      <div className="flex items-center gap-1 text-xl font-bold text-slate-800">
-                        <IndianRupee className="w-4 h-4 text-orange-500" />
-                        {product.price}
+                        <div className="flex items-center gap-1 text-sm text-slate-400 line-through">
+                          <IndianRupee className="w-3 h-3" />
+                          {product.originalPrice}
+                        </div>
+                      </>
+                    )}
+
+                    {/* Optional: Show a "Contact for Price" message for Little Luxe items instead */}
+                    {/* {product.category === "Little Luxe" && (
+                      <div className="text-sm text-slate-500 italic mb-2">
+                        Price available on request
                       </div>
-
-                      <div className="flex items-center gap-1 text-sm text-slate-400 line-through">
-                        <IndianRupee className="w-3 h-3" />
-                        {product.originalPrice}
-                      </div>
-                    </div>
-
+                    )} */}
                   </div>
 
                   {/* Button */}
@@ -295,11 +317,9 @@ export default function Products() {
                   >
                     Add to Cart
                   </button>
-
                 </div>
               </div>
             ))}
-
           </div>
 
           {/* Empty State */}
@@ -314,7 +334,6 @@ export default function Products() {
               </p>
             </div>
           )}
-
         </div>
       </section>
     </>
