@@ -95,7 +95,7 @@ export default function FAQ() {
         }}
       >
         {/* overlay for readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold">
@@ -104,7 +104,7 @@ export default function FAQ() {
           <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
             Everything You Need to Know About Little Luxe
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* FAQ SECTION */}
